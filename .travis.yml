@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+    - 0.12
+
+install:
+    - npm install
+    - npm install -g codeclimate-test-reporter
+
+script:
+    - npm run dist
+    - npm run lint
+    - npm run coverage
+
+after_script:
+    - CODECLIMATE_REPO_TOKEN=9b937ba5fcd13b83538042a72692dc830ca3c0d82e6b1aabb5442b9e5d051b82 codeclimate-test-reporter < coverage/lcov.info
+
+# http://docs.travis-ci.com/user/deployment/heroku/
+deploy:
+    provider: heroku
+    skip_cleanup: true
+    api_key:
+        secure: GOYkUoOJihS4eoyhFBSB89ohasPITP4hMbeHTNQAVH3Av6A/sJJOg3ApfX+hyZmMloTCIgATwjgNoUh4ayEpyY26sHcXQl6p8wzBUfiN2rLZC9+CNYkyOy1Z7Rqny48J7H/RLV3fTrO3TkwzL6pGd0KKW/hbtnR/92t0HWPsiWwL01thOiVuZY+G6zUGYg2UsBhZ9sDrRRvrGowRVrpRkEvDprf21H0PnmakMuzQ0VCGzo5TApf0QDT42Y8KeDOn/ofBD1NLogWxConNrUJVfkv24tz9KMBiRNfCiU4y3XOcEgI/nJ/ptxEHjzrpldANkxTB0PBDBfOaGJw2W72ZGOUsr89nEcxF5mxP4iLLLR/RcTs9LkZ/Di7C+FOWjtJkDx5sCSyxK4kciA/CXWb/l0KicW3VQkiDllRm/6SfABWW3ffuAdXaXBrdU2y33AhK9/NHi9QHEa9IUqzdvDfwgZBo0UuswyL7cqg9qc9guZPNapMW6S+N3nnTBMX1P3M10j5/HDuLfJ8r5Tn/FoZ1BA962xfQ417xKCt8Gha+2rIZVrEDTJRcZ1HggN69p9muF+BxpNvJZwnN9cBnHAHJ55xcWRsJANYpq/xguVvwJncp+VOAowoCvZ0SiMX1CBjDu3smBxWxNVPRHezP/vsrAHuvSNqBZ5M4T0uXXeOuFPQ=
+    app: unidentified
+    on:
+        branch: deploy/production
+        repo: ThibWeb/unidentified

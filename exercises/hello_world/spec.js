@@ -1,0 +1,22 @@
+import { describe, it } from 'mocha';
+import { expect } from 'chai';
+
+const helloWorld = global.submission;
+
+describe('HELLO WORLD', () => {
+    it('should export something', () => {
+        expect(helloWorld).to.exist;
+    });
+
+    it('should export a function', () => {
+        expect(helloWorld).to.be.a('function');
+    });
+
+    it('should return a number', () => {
+        expect(helloWorld([1, 2])).to.be.a('number');
+    });
+
+    it('should return the maximum value', () => {
+        expect(helloWorld([4, 8, 15, 16, 23, 42])).to.equal(42);
+    });
+});

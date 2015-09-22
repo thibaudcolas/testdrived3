@@ -24,12 +24,14 @@ module.exports = function () {
 };
 ```
 
-When you are done, you can run:
+`d3.max(array)` is one of D3's helper methods to work with data. You might want to create a bookmark for D3's API documentation: https://github.com/mbostock/d3/wiki/API-Reference.
+
+When you are done, you must run:
 
 ```sh
-$ {appname} server program.js
+$ {appname} verify program.js
 ```
 
-to check your solution in your browser. The browser window will open and execute your code.
+to proceed. Your program will be tested, a report will be generated, and the lesson will be marked `[COMPLETED]` if you are successful.
 
 ----------------------------------------------------------------------

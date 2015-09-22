@@ -17,3 +17,6 @@ bower_components
 .idea
 .vagrant
 .anaconda
+
+static/bundle.js
+static/submission.js

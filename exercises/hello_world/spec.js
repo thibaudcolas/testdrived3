@@ -18,5 +18,7 @@ describe('HELLO WORLD', () => {
 
     it('should return the maximum value', () => {
         expect(helloWorld([4, 8, 15, 16, 23, 42])).to.equal(42);
+        expect(helloWorld([-9, 20, 9])).to.equal(20);
+        expect(helloWorld([2, 2])).to.equal(2);
     });
 });

@@ -1,7 +1,12 @@
-First things first! We want to make sure that you're all set, let's start small.
-Write a function that takes an array of numbers as parameter and returns the maximum value.
+This introductory tutorial covers how to make a bar chart using the D3 JavaScript library. First we’ll make a bare-bones version in HTML, then a more complete chart in Scalable Vector Graphics (SVG), and lastly animated transitions between views.
 
 ----------------------------------------------------------------------
+
+First things first! We want to make sure that you're all set, let's start small.
+Write a function that takes an array of numbers as parameter and returns the maximum value, using the `d3.max` function.
+
+----------------------------------------------------------------------
+
 ## HINTS
 
 Here is some boilerplate:
@@ -18,7 +23,7 @@ function helloWorld(numbers) {
 module.exports = helloWorld;
 ```
 
-You can use `d3.max(numbers)` to get the maximum value in the array. Don't forget to export your function with `module.exports`.
+`d3.max(array)` is one of D3's helper methods to work with data. You might want to create a bookmark for D3's API documentation: https://github.com/mbostock/d3/wiki/API-Reference.
 
 Feel free to use ES6 JavaScript if you want to. The boilerplate would become:
 

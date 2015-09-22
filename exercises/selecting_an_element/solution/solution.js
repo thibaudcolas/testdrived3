@@ -1,10 +1,10 @@
+'use strict';
+
 var d3 = require('d3');
 
-function helloWorld() {
+module.exports = function() {
     var body = d3.select('body');
-    var div = body.append('div');
+    var title = body.append('h1');
 
-    div.html('Hello, world!');
+    title.html('D3 bar chart');
 };
-
-module.exports = helloWorld;

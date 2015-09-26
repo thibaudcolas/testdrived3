@@ -25,9 +25,7 @@
     "node": ">=0.12"
   },
   "preferGlobal": true,
-  "bin": {
-    "testdrived3": "./index.js"
-  },
+  "bin": "./index.js",
   "dependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",

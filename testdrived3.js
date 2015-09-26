@@ -1,6 +1,10 @@
 import path from 'path';
 import workshopper from 'workshopper';
+import updateNotifier from 'update-notifier';
 import Server from './lib/Server';
+import pkg from './package.json';
+
+updateNotifier({pkg: pkg}).notify();
 
 const serverMode = process.argv[2] === 'server';
 

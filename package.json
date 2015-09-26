@@ -46,6 +46,7 @@
     "eslint-config-airbnb": "0.0.8"
   },
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "start": "node index.js"
   }
 }

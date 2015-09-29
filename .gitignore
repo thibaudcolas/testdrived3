@@ -18,5 +18,6 @@ bower_components
 .vagrant
 .anaconda
 
-static/bundle.js
-static/submission.js
+es5/
+src/static/bundle.js
+src/static/submission.js

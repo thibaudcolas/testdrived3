@@ -25,7 +25,7 @@
     "node": ">=0.12"
   },
   "preferGlobal": true,
-  "bin": "./index.js",
+  "bin": "./es5/testdrived3.js",
   "dependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
@@ -46,6 +46,7 @@
   },
   "scripts": {
     "test": "eslint .",
-    "start": "node index.js"
+    "start": "node src/index.js",
+    "build": "cp -R src es5 && babel src --out-dir es5 --ignore static"
   }
 }

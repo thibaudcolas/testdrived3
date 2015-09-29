@@ -1,6 +1,7 @@
 .editorconfig
 .eslintignore
 .eslintrc
+.eslintcache
 .gitattributes
 .githooks/
 .gitignore

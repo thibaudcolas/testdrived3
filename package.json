@@ -45,7 +45,7 @@
     "eslint-config-airbnb": "0.0.8"
   },
   "scripts": {
-    "test": "eslint .",
+    "test": "eslint --cache .",
     "start": "node src/index.js",
     "build": "cp -R src es5 && babel src --out-dir es5 --ignore static",
     "prepublish": "npm run build -s"

@@ -17,6 +17,7 @@ bower_components
 .idea
 .vagrant
 .anaconda
+.eslintcache
 
 es5/
 src/static/bundle.js

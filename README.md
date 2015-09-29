@@ -13,3 +13,21 @@ __testdrived3__ will guide you through the creation of a <strike>3D pie chart</s
 2. Run `npm install -g testdrived3`
 3. Run `testdrived3`
 4. **.. profit!**
+
+## Contributing
+
+Install the project with:
+
+```sh
+git clone git@github.com:ThibWeb/testdrived3.git
+cd testdrived3
+npm install
+npm install -g eslint babel-eslint eslint-config-airbnb
+./.githooks/deploy
+```
+
+To run the workshopper locally:
+
+```sh
+node src/index.js
+```

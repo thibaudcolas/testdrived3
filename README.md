@@ -31,3 +31,12 @@ To run the workshopper locally:
 ```sh
 node src/index.js
 ```
+
+To release a new version:
+
+```sh
+npm version minor -m "Release %s"
+git push origin master
+git push --tags
+npm publish
+```

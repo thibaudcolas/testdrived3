@@ -14,5 +14,5 @@ then
     echo "Aborting commit due to whitespace errors."
     exit 1
 else
-    npm test
+    npm test -s
 fi

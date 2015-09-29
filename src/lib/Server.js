@@ -74,7 +74,7 @@ export default class Server {
             logLevel: 'silent',
         });
 
-        console.log('Point your browser to http://localhost:${this.port}/');
+        console.log(`Point your browser to http://localhost:${this.port}/`);
 
         bs.watch()
     }

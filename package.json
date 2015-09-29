@@ -47,6 +47,7 @@
   "scripts": {
     "test": "eslint .",
     "start": "node src/index.js",
-    "build": "cp -R src es5 && babel src --out-dir es5 --ignore static"
+    "build": "cp -R src es5 && babel src --out-dir es5 --ignore static",
+    "prepublish": "npm run build -s"
   }
 }

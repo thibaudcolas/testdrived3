@@ -6,3 +6,9 @@ coverage
 lib-cov
 public
 static
+
+es5/
+src/static/bundle.js
+src/static/submission.js
+tests/
+**/solution/solution.js

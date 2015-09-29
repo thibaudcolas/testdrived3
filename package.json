@@ -57,7 +57,7 @@
     "pretest": "npm run lint -s",
     "test": "npm run test:unit -s",
     "start": "node src/index.js",
-    "build": "rm -r es5 && cp -R src es5 && babel src --out-dir es5 --ignore=tests,static,**/solution.js",
+    "build": "rm -rf es5 && cp -R src es5 && babel src --out-dir es5 --ignore=tests,static,**/solution.js",
     "prepublish": "npm run build -s"
   }
 }

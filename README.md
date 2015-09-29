@@ -5,7 +5,7 @@ Test-drive D3 for much win!
 
 __testdrived3__ will guide you through the creation of a <strike>3D pie chart</strike> bar chart. It is based on the [Let's make a bar chart part 1](http://bost.ocks.org/mike/bar/) [part 2](http://bost.ocks.org/mike/bar/2/) [and part 3](http://bost.ocks.org/mike/bar/3/) tutorials from D3's creator, Mike Bostock.
 
-[![Build Status](https://img.shields.io/travis/ThibWeb/testdrived3.svg?style=flat-square)](https://travis-ci.org/ThibWeb/testdrived3) [![dependency Status](https://img.shields.io/david/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3)
+[![npm](https://img.shields.io/npm/v/testdrived3.svg?style=flat-square)](https://www.npmjs.com/package/testdrived3) [![Build Status](https://img.shields.io/travis/ThibWeb/testdrived3.svg?style=flat-square)](https://travis-ci.org/ThibWeb/testdrived3) [![dependency Status](https://img.shields.io/david/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3)
 
 > TODO Screenshot
 

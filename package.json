@@ -47,7 +47,7 @@
   "scripts": {
     "test": "eslint --cache .",
     "start": "node src/index.js",
-    "build": "rm -r es5 && cp -R src es5 && babel src --out-dir es5 --ignore static",
+    "build": "rm -r es5 && cp -R src es5 && babel src --out-dir es5 --ignore static --ignore **/solution.js",
     "prepublish": "npm run build -s"
   }
 }

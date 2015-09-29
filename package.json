@@ -41,13 +41,23 @@
   },
   "devDependencies": {
     "babel-eslint": "^4.1.3",
+    "chai": "^3.3.0",
     "eslint": "^1.5.0",
-    "eslint-config-airbnb": "0.0.8"
+    "eslint-config-airbnb": "0.0.8",
+    "isparta": "^3.0.4",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.1"
   },
   "scripts": {
-    "test": "eslint --cache .",
+    "lint": "eslint --cache .",
+    "test:unit": "mocha --compilers js:babel/register src/tests",
+    "test:unit:watch": "mocha --watch --compilers js:babel/register src/tests",
+    "test:unit:coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- src/tests",
+    "test:unit:ci": "mocha --compilers js:babel/register es5/tests",
+    "pretest": "npm run lint -s",
+    "test": "npm run test:unit -s",
     "start": "node src/index.js",
-    "build": "rm -r es5 && cp -R src es5 && babel src --out-dir es5 --ignore static --ignore **/solution.js",
+    "build": "rm -r es5 && cp -R src es5 && babel src --out-dir es5 --ignore=tests,static,**/solution.js",
     "prepublish": "npm run build -s"
   }
 }

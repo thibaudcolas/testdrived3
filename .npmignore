@@ -1,0 +1,9 @@
+.editorconfig
+.eslintignore
+.eslintrc
+.gitattributes
+.githooks/
+.gitignore
+.travis.yml
+src/
+tests/

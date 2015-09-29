@@ -20,6 +20,7 @@ export default function(runFunction) {
         let submission;
 
         try {
+            require('babel/register');
             submission = require(submissionPath);
         } catch (e) {
             const message = (e.code === 'MODULE_NOT_FOUND' ? i18n('fail.module_not_found') : i18n('fail.module_error'));

@@ -1,14 +1,21 @@
-Now let's play with elements. D3, as jQuery, allows you to work with multiple elements at once in a _selection_. You can create a selection by querying elements with a _selector_: `d3.select('body')`, or `d3.select('.subtitle')`.
-
-Here's an example of creating a `<div>` with D3:
+Another convenience of selections is method chaining: selection methods, such as `selection.attr`, return the current selection. This lets you easily apply multiple operations to the same elements. For example, here we set the class and background-color of the body tag:
 
 ```js
-var body = d3.select('body');
-var div = body.append('div');
-div.html('Hello, world!');
+d3.select('body')
+    .attr('class', 'app')
+    .style('background-color', 'lightgrey');
 ```
 
-Let's do something similar: in a function, create a `<h1>` tag, and use "`D3 bar chart`" as its content.
+There is a gotcha with method chaining, however: while most operations return the same selection, some methods return a new one! For example, `selection.append` returns a new selection containing the new elements. This conveniently allows you to chain operations into the new elements.
+
+```js
+d3.selectAll('section')
+    .attr('class', 'special')
+  .append('div')
+    .html('Hello, world!');
+```
+
+Your turn now: select the `body`, change its `background-color` to "`yellow`", then append an `h1`, set its class to `chart-title` and its HTML to "`This is pretty neat`". All of it in a single method chain, please!
 
 ----------------------------------------------------------------------
 
@@ -20,18 +27,10 @@ Here is some boilerplate:
 var d3 = require('d3');
 
 module.exports = function () {
-    // TODO select the body tag, then append an h1 and set its HTML to the desired text.
+    // TODO select the body tag, change its background-color, then append an h1, give it the right class, and set its HTML to the desired text.
 };
 ```
 
-`d3.max(array)` is one of D3's helper methods to work with data. You might want to create a bookmark for D3's API documentation: https://github.com/mbostock/d3/wiki/API-Reference.
-
-When you are done, you must run:
-
-```sh
-$ {appname} verify program.js
-```
-
-to proceed. Your program will be tested, a report will be generated, and the lesson will be marked `[COMPLETED]` if you are successful.
+You should definitely give a try to `{appname} server program.js` to see your changes in the browser.
 
 ----------------------------------------------------------------------

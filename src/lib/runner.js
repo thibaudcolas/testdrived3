@@ -48,10 +48,7 @@ export default function(runFunction) {
         const mocha = new Mocha();
         mocha.addFile(path.join(this.dir, 'spec.js'));
 
-        // In run mode we'll want to show additional output.
-        if (mode === 'run') {
-            runFunction(global.submission);
-        }
+        runFunction(global.submission);
 
         mocha.run((failures) => {
             this.failures = failures;

@@ -11,7 +11,7 @@ There is a gotcha with method chaining, however: while most operations return th
 ```js
 d3.selectAll('section')
     .attr('class', 'special')
-    .append('div')
+.append('div')
     .html('Hello, world!');
 ```
 

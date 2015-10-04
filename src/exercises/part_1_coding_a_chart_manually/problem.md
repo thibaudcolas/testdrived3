@@ -17,7 +17,9 @@ And this is the HTML that we want to obtain:
 </div>
 ```
 
-After all, there are only six numbers in this trivial data set, so it’s not hard to write a few div elements by hand, set their width as a multiple of the data, and be done with it. This chart has one div for a container, and one child div for each bar. We style the divs so that they look like bars with a right-aligned label:
+The `.chart` container is already on the page, we just need to create our chart inside it.
+
+After all, there are only six numbers in this trivial data set, so it’s not hard to write a few div elements by hand, set their width as a multiple of the data, and be done with it. We style the divs so that they look like bars with a right-aligned label:
 
 ```css
 .chart div {
@@ -40,34 +42,37 @@ Note: you'll still need to run `{appname} verify program.js` for this exercise t
 Copy and paste the solution:
 
 ```js
+var d3 = require('d3');
+
 module.exports = function() {
-    document.write('                                   \
-        <div class="chart">                            \
+    d3.select('.chart')
+        .html('                                        \
             <div style="width: 40px;">4</div>          \
             <div style="width: 80px;">8</div>          \
             <div style="width: 150px;">15</div>        \
             <div style="width: 160px;">16</div>        \
             <div style="width: 230px;">23</div>        \
             <div style="width: 420px;">42</div>        \
-        </div>                                         \
-    ');
+        ');
 };
+
 ```
 
 If you want to give a try to ES6, you can use multi-line strings with (\`\`) instead of the line continuation (\\):
 
 ```js
+import d3 from 'd3';
+
 export default function() {
-    document.write(`
-        <div class="chart">
+    d3.select('.chart')
+        .html(`
             <div style="width: 40px;">4</div>
             <div style="width: 80px;">8</div>
             <div style="width: 150px;">15</div>
             <div style="width: 160px;">16</div>
             <div style="width: 230px;">23</div>
             <div style="width: 420px;">42</div>
-        </div>
-    `);
+        `);
 }
 ```
 

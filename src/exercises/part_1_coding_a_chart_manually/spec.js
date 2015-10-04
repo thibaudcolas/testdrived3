@@ -6,8 +6,8 @@ const numbers = [4, 8, 15, 16, 23, 42];
 const submission = global.submission;
 
 describe('Part 1: Coding a chart, manually', () => {
-    beforeEach('reset the page', () => {
-        d3.select('body').html('');
+    beforeEach('', () => {
+        d3.selectAll('.chart > div').remove();
     });
 
     it('should export a function', () => {
@@ -15,14 +15,7 @@ describe('Part 1: Coding a chart, manually', () => {
         expect(submission).to.be.a('function');
     });
 
-    it('should render a single container <div> with the class "chart"', () => {
-        submission(numbers);
-        expect(d3.selectAll('body > div')).to.exist;
-        expect(d3.selectAll('.chart')).to.exist;
-        expect(d3.selectAll('.chart').size()).to.equal(1);
-    });
-
-    it('should have six <div> bars inside the container <div>', () => {
+    it('should have six <div> bars inside the container .chart <div>', () => {
         submission(numbers);
         expect(d3.selectAll('.chart > div')).to.exist;
         expect(d3.selectAll('.chart > div').size()).to.equal(6);
@@ -48,6 +41,17 @@ describe('Part 1: Coding a chart, manually', () => {
             const value = parseInt(elt.innerHTML, 10);
 
             expect(numbers.indexOf(value)).to.not.equal(-1);
+        });
+    });
+
+    it('bars should be in the same order as in our array of numbers', () => {
+        submission(numbers);
+        const bars = d3.selectAll('.chart > div')[0];
+
+        bars.forEach((elt, i) => {
+            const value = parseInt(elt.innerHTML, 10);
+
+            expect(numbers[i]).to.equal(value);
         });
     });
 });

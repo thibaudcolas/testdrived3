@@ -6,8 +6,8 @@ const numbers = [4, 8, 15, 16, 23, 42];
 const submission = global.submission;
 
 describe('Chaining methods', () => {
-    beforeEach('reset the page', () => {
-        d3.select('body').html('');
+    beforeEach('', () => {
+        d3.select('h1').remove();
     });
 
     it('should export a function', () => {

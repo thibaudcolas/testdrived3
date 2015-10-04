@@ -9,11 +9,8 @@ describe('Chaining methods', () => {
         d3.select('body').html('');
     });
 
-    it('should export something', () => {
-        expect(submission).to.exist;
-    });
-
     it('should export a function', () => {
+        expect(submission).to.exist;
         expect(submission).to.be.a('function');
     });
 

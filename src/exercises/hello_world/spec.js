@@ -4,11 +4,8 @@ import { expect } from 'chai';
 const helloWorld = global.submission;
 
 describe('Hello, World!', () => {
-    it('should export something', () => {
-        expect(helloWorld).to.exist;
-    });
-
     it('should export a function', () => {
+        expect(helloWorld).to.exist;
         expect(helloWorld).to.be.a('function');
     });
 

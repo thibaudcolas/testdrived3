@@ -5,7 +5,7 @@ import d3 from 'd3';
 const submission = global.submission;
 const numbers = [4, 8, 15, 16, 23, 42];
 
-describe('SELECTING AN ELEMENT', () => {
+describe('Selecting an element', () => {
     beforeEach('reset the page', () => {
         d3.select('body').html('');
     });

@@ -3,8 +3,9 @@
 var d3 = require('d3');
 
 module.exports = function() {
-    var body = d3.select('body');
-    var title = body.append('h1');
-
-    title.html('D3 bar chart');
+    d3.select('body')
+        .style('background-color', 'yellow')
+    .append('h1')
+        .attr('class', 'chart-title')
+        .html('D3 bar chart');
 };

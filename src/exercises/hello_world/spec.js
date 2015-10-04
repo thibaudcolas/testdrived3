@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 const helloWorld = global.submission;
 
-describe('HELLO WORLD', () => {
+describe('Hello, World!', () => {
     it('should export something', () => {
         expect(helloWorld).to.exist;
     });

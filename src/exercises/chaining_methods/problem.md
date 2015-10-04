@@ -11,11 +11,11 @@ There is a gotcha with method chaining, however: while most operations return th
 ```js
 d3.selectAll('section')
     .attr('class', 'special')
-  .append('div')
+    .append('div')
     .html('Hello, world!');
 ```
 
-Your turn now: select the `body`, change its `background-color` to "`yellow`", then append an `h1`, set its class to `chart-title` and its HTML to "`This is pretty neat`". All of it in a single method chain, please!
+Your turn now: select the `body`, change its `background-color` to "`yellow`", then append an `h1`, set its class to `chart-title` and its HTML to "`D3 bar chart`". All of it in a single method chain, please!
 
 ----------------------------------------------------------------------
 

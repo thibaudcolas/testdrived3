@@ -2,8 +2,8 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
-const submission = global.submission;
 const numbers = [4, 8, 15, 16, 23, 42];
+const submission = global.submission;
 
 describe('Selecting an element', () => {
     beforeEach('reset the page', () => {

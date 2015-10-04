@@ -2,18 +2,26 @@
 
 TESTDRIVED3="node es5/testdrived3.js"
 
-$TESTDRIVED3 list > /dev/null
+$TESTDRIVED3 list
 
-$TESTDRIVED3 help > /dev/null
+$TESTDRIVED3 help
 
-$TESTDRIVED3 select "HELLO WORLD" > /dev/null
-$TESTDRIVED3 run es5/exercises/hello_world/solution/solution.js > /dev/null
-$TESTDRIVED3 verify es5/exercises/hello_world/solution/solution.js > /dev/null
+$TESTDRIVED3 select "Hello, World!"
+$TESTDRIVED3 run es5/exercises/hello_world/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/hello_world/solution/solution.js
 
-$TESTDRIVED3 select "SELECTING AN ELEMENT" > /dev/null
-$TESTDRIVED3 run es5/exercises/selecting_an_element/solution/solution.js > /dev/null
-$TESTDRIVED3 verify es5/exercises/selecting_an_element/solution/solution.js > /dev/null
+$TESTDRIVED3 select "Selecting an element"
+$TESTDRIVED3 run es5/exercises/selecting_an_element/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/selecting_an_element/solution/solution.js
 
-$TESTDRIVED3 select "CHAINING METHODS" > /dev/null
-$TESTDRIVED3 run es5/exercises/chaining_methods/solution/solution.js > /dev/null
-$TESTDRIVED3 verify es5/exercises/chaining_methods/solution/solution.js > /dev/null
+$TESTDRIVED3 select "Chaining methods"
+$TESTDRIVED3 run es5/exercises/chaining_methods/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/chaining_methods/solution/solution.js
+
+$TESTDRIVED3 select "Part 1: Coding a chart, manually"
+$TESTDRIVED3 run es5/exercises/part_1_coding_a_chart_manually/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/part_1_coding_a_chart_manually/solution/solution.js
+
+$TESTDRIVED3 select "Part 1: Coding a chart, automatically"
+$TESTDRIVED3 run es5/exercises/part_1_coding_a_chart_automatically/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/part_1_coding_a_chart_automatically/solution/solution.js

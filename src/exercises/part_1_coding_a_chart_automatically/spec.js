@@ -35,7 +35,7 @@ describe('Part 1: Coding a chart, automatically', () => {
         });
     });
 
-    it('each bar should have a width value 10x its bound data', () => {
+    it('each bar should have a width equal to 10x its bound data, in pixels', () => {
         submission(numbers);
 
         const bars = d3.selectAll('.chart > div');

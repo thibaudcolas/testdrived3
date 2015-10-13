@@ -21,7 +21,7 @@ describe('Part 1: Coding a chart, manually', () => {
         expect(d3.selectAll('.chart > div').size()).to.equal(6);
     });
 
-    it('each bar should have a width value 10x greater than its label', () => {
+    it('each bar should have a width value 10x greater than its label, in pixels', () => {
         submission(numbers);
         const bars = d3.selectAll('.chart > div')[0];
 

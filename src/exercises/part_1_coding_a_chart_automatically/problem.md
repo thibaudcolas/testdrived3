@@ -1,29 +1,58 @@
-Of course hard-coding is impractical for most datasets, and the point of this tutorial is to teach you how to create charts from data automatically. So now let’s create the same structure using D3.
+Of course hard-coding is impractical for most datasets, and the point of this tutorial is to teach you how to create charts from data automatically. So now let’s create the identical structure using D3.
 
-// TODO As on the previous exercise, select the .chart element.
-// Then bind your numbers to the <div> to create the bars.
-// Use the enter() selection to append a new div for each number
-// Change their CSS width according to their value
-// Set their text to be their value
+We start with an empty page that contains only a div of class "`chart`". First, we select the container using a class selector:
 
-starting with an empty page that contains only a div of class "chart". The following script selects the chart container and then appends a child div for each bar with the desired width:
+```js
+d3.select('.chart')
+```
 
+Then, inside that `.chart` we want to have a `<div>` for each entry in our dataset. We are going to do a __data join__ between the `<div>` and our array of numbers:
+
+```js
+d3.select('.chart')
+    .selectAll('div')
+    .data(numbers)
+```
+
+> The data join is one of D3's key concepts. Have a look at http://bost.ocks.org/mike/join/.
+
+Since we know the `selectAll('div')` selection is empty, the returned `update` and `exit()` selections are also empty, and we need only handle the `enter()` selection which represents new data for which there was no existing element. We create these missing elements by appending to the enter selection:
+
+```js
+d3.select('.chart')
+    .selectAll('div')
+    .data(numbers)
+.enter().append('div')
+```
+
+Now we have a new `<div>` for each item in `numbers`. You just need to set their width and text dynamically, according to their value:
+
+```js
+d3.select('.chart')
+    .selectAll('div')
+    .data(numbers)
+.enter().append('div')
+    .style('width', function(d) { /* TODO Return 10x the value, in pixels. */ })
+    .text(function(d) { /* TODO Return the value. */ });
+```
+
+Calling the parameter `d` is a D3 convention for single data points.
 
 ----------------------------------------------------------------------
 
 ## HINTS
 
-Here is some boilerplate:
+Fill in the gaps:
 
 ```js
 module.exports = function(numbers) {
-    // TODO As on the previous exercise, select the .chart element.
-    // Then bind your numbers to the <div> to create the bars.
-    // Use the enter() selection to append a new div for each number
-    // Change their CSS width according to their value
-    // Set their text to be their value
+    d3.select('.chart')
+        .selectAll('div')
+        .data(numbers)
+    .enter().append('div')
+        .style('width', function(d) { /* TODO Return 10x the value, in pixels. */ })
+        .text(function(d) { /* TODO Return the value. */ });
 };
 ```
-
 
 ----------------------------------------------------------------------

@@ -7,6 +7,6 @@ module.exports = function(numbers) {
         .selectAll('div')
         .data(numbers)
     .enter().append('div')
-        .style('width', function(d) { return d * 10 + 'px'; })
+        .style('width', function(d) { return (d * 10) + 'px'; })
         .text(function(d) { return d; });
 };

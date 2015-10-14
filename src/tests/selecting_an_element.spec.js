@@ -1,4 +1,4 @@
-require('../lib/runner');
+require('../lib/html-document');
 
 global.submission = require('../exercises/selecting_an_element/solution/solution');
 

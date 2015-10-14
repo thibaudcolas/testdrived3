@@ -1,4 +1,4 @@
-require('../lib/runner');
+require('../lib/html-document');
 
 global.submission = require('../exercises/chaining_methods/solution/solution');
 

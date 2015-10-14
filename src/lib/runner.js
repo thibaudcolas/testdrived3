@@ -1,13 +1,8 @@
 import path from 'path';
 import Mocha from 'mocha';
-import jsdom from 'jsdom';
 import exerciser from 'workshopper-exercise';
 import filecheck from 'workshopper-exercise/filecheck';
 import execute from 'workshopper-exercise/execute';
-
-// Create a JSDOM document that we'll play with during the exercises.
-global.document  = jsdom.jsdom('<html><body><div class="chart"></div></body></html>');
-global.window    = global.document.parentWindow;
 
 export default function(runFunction) {
     const exercise = execute(filecheck(exerciser()));

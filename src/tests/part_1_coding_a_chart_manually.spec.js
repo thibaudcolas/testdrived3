@@ -1,4 +1,4 @@
-require('../lib/runner');
+require('../lib/html-document');
 
 global.submission = require('../exercises/part_1_coding_a_chart_manually/solution/solution');
 

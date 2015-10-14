@@ -7,7 +7,7 @@ var numbers = [4, 8, 15, 16, 23, 42];
 And this is the HTML that we want to obtain:
 
 ```html
-<div class="chart">
+<div class="html-chart">
     <div style="width: 40px;">4</div>
     <div style="width: 80px;">8</div>
     <div style="width: 150px;">15</div>
@@ -20,7 +20,7 @@ And this is the HTML that we want to obtain:
 After all, there are only six numbers in this trivial data set, so it’s not hard to write a few div elements by hand, set their width as a multiple of the data, and be done with it. We style the divs so that they look like bars with a right-aligned label:
 
 ```css
-.chart div {
+.html-chart div {
     margin: 3px;
     padding: 3px;
     text-align: right;
@@ -45,7 +45,7 @@ var d3 = require('d3');
 module.exports = function() {
     d3.select('body')
         .html('                                      \
-            <div class="chart">                      \
+            <div class="html-chart">                 \
                 <div style="width: 40px;">4</div>    \
                 <div style="width: 80px;">8</div>    \
                 <div style="width: 150px;">15</div>  \
@@ -65,7 +65,7 @@ import d3 from 'd3';
 export default function() {
     d3.select('body')
         .html(`
-            <div class="chart">
+            <div class="html-chart">
                 <div style="width: 40px;">4</div>
                 <div style="width: 80px;">8</div>
                 <div style="width: 150px;">15</div>

@@ -8,17 +8,28 @@
             font-size: 3rem;
         }
 
-        .chart div {
+        .html-chart div {
             margin: 3px;
             padding: 3px;
             text-align: right;
             color: white;
             background-color: steelblue;
         }
+
+        .chart rect {
+            fill: steelblue;
+        }
+
+        .chart text {
+            fill: white;
+            font: 10px sans-serif;
+            text-anchor: end;
+        }
     </style>
 </head>
 <body>
-    <div class="chart"></div>
+    <div class="html-chart"></div>
+    <svg class="chart"></svg>
     <script src="bundle.js"></script>
 </body>
 </html>

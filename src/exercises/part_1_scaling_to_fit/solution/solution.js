@@ -7,7 +7,7 @@ module.exports = function(numbers) {
         .domain([0, d3.max(numbers)])
         .range([0, 300]);
 
-    d3.select('.chart')
+    d3.select('.html-chart')
         .selectAll('div')
         .data(numbers)
     .enter().append('div')

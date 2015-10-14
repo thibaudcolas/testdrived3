@@ -7,7 +7,7 @@ const submission = global.submission;
 
 describe('Part 1: Coding a chart, automatically', () => {
     beforeEach('', () => {
-        d3.selectAll('.chart > div').remove();
+        d3.selectAll('.html-chart > div').remove();
     });
 
     it('should export a function', () => {
@@ -18,19 +18,19 @@ describe('Part 1: Coding a chart, automatically', () => {
     it('should render a single container <div> with the class "chart"', () => {
         submission(numbers);
         expect(d3.selectAll('body > div')).to.exist;
-        expect(d3.selectAll('.chart')).to.exist;
+        expect(d3.selectAll('.html-chart')).to.exist;
     });
 
     it('should have six <div> bars inside the container <div>', () => {
         submission(numbers);
-        expect(d3.selectAll('.chart > div')).to.exist;
-        expect(d3.selectAll('.chart > div').size()).to.equal(6);
+        expect(d3.selectAll('.html-chart > div')).to.exist;
+        expect(d3.selectAll('.html-chart > div').size()).to.equal(6);
     });
 
     it('each bar should represent one item in our array of numbers', () => {
         submission(numbers);
 
-        d3.selectAll('.chart > div').each((d) => {
+        d3.selectAll('.html-chart > div').each((d) => {
             expect(numbers.indexOf(d)).not.to.equal(-1);
         });
     });
@@ -38,7 +38,7 @@ describe('Part 1: Coding a chart, automatically', () => {
     it('each bar should have a width equal to 10x its bound data, in pixels', () => {
         submission(numbers);
 
-        const bars = d3.selectAll('.chart > div');
+        const bars = d3.selectAll('.html-chart > div');
 
         bars.each((d, i) => {
             const bar = d3.select(bars[0][i]);
@@ -51,7 +51,7 @@ describe('Part 1: Coding a chart, automatically', () => {
     it('each bar should have a label identical to its bound data', () => {
         submission(numbers);
 
-        const bars = d3.selectAll('.chart > div');
+        const bars = d3.selectAll('.html-chart > div');
 
         bars.each((d, i) => {
             const bar = d3.select(bars[0][i]);
@@ -64,7 +64,7 @@ describe('Part 1: Coding a chart, automatically', () => {
     it('bars should be in the same order as in our array of numbers', () => {
         submission(numbers);
 
-        d3.selectAll('.chart > div').each((d, i) => {
+        d3.selectAll('.html-chart > div').each((d, i) => {
             expect(numbers.indexOf(d)).to.equal(i);
         });
     });

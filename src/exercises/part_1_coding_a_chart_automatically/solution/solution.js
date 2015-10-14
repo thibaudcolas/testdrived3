@@ -3,7 +3,7 @@
 var d3 = require('d3');
 
 module.exports = function(numbers) {
-    d3.select('.chart')
+    d3.select('.html-chart')
         .selectAll('div')
         .data(numbers)
     .enter().append('div')

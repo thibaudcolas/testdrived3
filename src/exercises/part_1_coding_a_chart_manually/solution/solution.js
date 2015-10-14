@@ -5,7 +5,7 @@ var d3 = require('d3');
 module.exports = function() {
     d3.select('body')
         .html('                                      \
-            <div class="chart">                      \
+            <div class="html-chart">                 \
                 <div style="width: 40px;">4</div>    \
                 <div style="width: 80px;">8</div>    \
                 <div style="width: 150px;">15</div>  \

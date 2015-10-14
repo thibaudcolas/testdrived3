@@ -8,19 +8,23 @@ import pkg from '../package.json';
 
 updateNotifier({pkg: pkg}).notify();
 
-const serverMode = process.argv[2] === 'server';
+workshopper({
+    name: 'testdrived3',
+    appDir: __dirname,
+    languages: ['en'],
+    helpFile: path.join(__dirname, './i18n/help/{lang}.txt'),
+    menuItems: [],
+    commands: [
+        {
+            name: 'server',
+            menu: false,
+            short: 's',
+            handler() {
+                const submissionPath = path.resolve(process.cwd(), process.argv[3]);
+                const server = new Server(process.env.PORT || 3333, submissionPath);
 
-if (serverMode) {
-    const submissionPath = path.resolve(process.cwd(), process.argv[3]);
-    const server = new Server(process.env.PORT || 3333, submissionPath);
-
-    server.watch();
-} else {
-    workshopper({
-        name: 'testdrived3',
-        appDir: __dirname,
-        languages: ['en'],
-        helpFile: path.join(__dirname, './i18n/help/{lang}.txt'),
-        menuItems: [],
-    });
-}
+                server.watch();
+            },
+        },
+    ],
+});

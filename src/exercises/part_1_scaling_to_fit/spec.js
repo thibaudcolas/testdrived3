@@ -5,7 +5,7 @@ import d3 from 'd3';
 const numbers = [4, 8, 15, 16, 23, 42];
 const submission = global.submission;
 
-describe('Part 1: Coding a chart, automatically', () => {
+describe('Part 1: Scaling to fit', () => {
     beforeEach('', () => {
         d3.selectAll('.chart > div').remove();
     });
@@ -35,16 +35,33 @@ describe('Part 1: Coding a chart, automatically', () => {
         });
     });
 
-    it('each bar should have a width equal to 10x its bound data, in pixels', () => {
+    it('each bar should have a width in pixels', () => {
         submission(numbers);
 
         const bars = d3.selectAll('.chart > div');
 
         bars.each((d, i) => {
             const bar = d3.select(bars[0][i]);
-            const width = parseInt(bar.style('width').split('px')[0], 10);
+            const width = parseFloat(bar.style('width').split('px')[0]);
 
-            expect(width).to.equal(d * 10);
+            expect(width).to.be.above(0);
+        });
+    });
+
+    it('each bar\'s width should follow a linear scale from 0 to 300', () => {
+        submission(numbers);
+
+        const bars = d3.selectAll('.chart > div');
+
+        const x = d3.scale.linear()
+            .domain([0, d3.max(numbers)])
+            .range([0, 300]);
+
+        bars.each((d, i) => {
+            const bar = d3.select(bars[0][i]);
+            const width = parseFloat(bar.style('width').split('px')[0]);
+
+            expect(width).to.equal(x(d));
         });
     });
 

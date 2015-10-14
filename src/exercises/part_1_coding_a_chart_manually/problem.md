@@ -17,8 +17,6 @@ And this is the HTML that we want to obtain:
 </div>
 ```
 
-The `.chart` container is already on the page, we just need to create our chart inside it.
-
 After all, there are only six numbers in this trivial data set, so it’s not hard to write a few div elements by hand, set their width as a multiple of the data, and be done with it. We style the divs so that they look like bars with a right-aligned label:
 
 ```css
@@ -45,17 +43,18 @@ Copy and paste the solution:
 var d3 = require('d3');
 
 module.exports = function() {
-    d3.select('.chart')
-        .html('                                        \
-            <div style="width: 40px;">4</div>          \
-            <div style="width: 80px;">8</div>          \
-            <div style="width: 150px;">15</div>        \
-            <div style="width: 160px;">16</div>        \
-            <div style="width: 230px;">23</div>        \
-            <div style="width: 420px;">42</div>        \
+    d3.select('body')
+        .html('                                      \
+            <div class="chart">                      \
+                <div style="width: 40px;">4</div>    \
+                <div style="width: 80px;">8</div>    \
+                <div style="width: 150px;">15</div>  \
+                <div style="width: 160px;">16</div>  \
+                <div style="width: 230px;">23</div>  \
+                <div style="width: 420px;">42</div>  \
+            </div>                                   \
         ');
 };
-
 ```
 
 If you want to give a try to ES6, you can use multi-line strings with (\`\`) instead of the line continuation (\\):
@@ -64,14 +63,16 @@ If you want to give a try to ES6, you can use multi-line strings with (\`\`) ins
 import d3 from 'd3';
 
 export default function() {
-    d3.select('.chart')
+    d3.select('body')
         .html(`
-            <div style="width: 40px;">4</div>
-            <div style="width: 80px;">8</div>
-            <div style="width: 150px;">15</div>
-            <div style="width: 160px;">16</div>
-            <div style="width: 230px;">23</div>
-            <div style="width: 420px;">42</div>
+            <div class="chart">
+                <div style="width: 40px;">4</div>
+                <div style="width: 80px;">8</div>
+                <div style="width: 150px;">15</div>
+                <div style="width: 160px;">16</div>
+                <div style="width: 230px;">23</div>
+                <div style="width: 420px;">42</div>
+            </div>
         `);
 }
 ```

@@ -8,7 +8,6 @@ import execute from 'workshopper-exercise/execute';
 // Create a JSDOM document that we'll play with during the exercises.
 global.document  = jsdom.jsdom('<html><body><div class="chart"></div></body></html>');
 global.window    = global.document.parentWindow;
-global.navigator = global.window.navigator;
 
 export default function(runFunction) {
     const exercise = execute(filecheck(exerciser()));

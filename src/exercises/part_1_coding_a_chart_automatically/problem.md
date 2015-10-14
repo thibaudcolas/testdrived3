@@ -1,6 +1,6 @@
 Of course hard-coding is impractical for most datasets, and the point of this tutorial is to teach you how to create charts from data automatically. So now let’s create the identical structure using D3.
 
-We start with an empty page that contains only a div of class "`chart`". First, we select the container using a class selector:
+We start with an empty page that contains only a container of class "`chart`". First, we select the container using a class selector:
 
 ```js
 d3.select('.chart')

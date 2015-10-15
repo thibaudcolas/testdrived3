@@ -43,30 +43,17 @@ describe('Part 2: Coding a chart, manually', () => {
         });
     });
 
-    it('each bar should be position with a translate transform', () => {
+    it('each bar should be positioned with a translate transform, according to its order', () => {
         submission(numbers);
         const bars = d3.selectAll('.chart > g')[0];
 
-        bars.forEach(() => {
+        bars.forEach((elt, i) => {
+            const transform = elt.getAttribute('transform');
+            const positionY = parseInt(transform.split('translate(0,')[1], 10);
 
-        });
-    });
-
-    it('each <rect> should be of the right dimensions', () => {
-        submission(numbers);
-        const bars = d3.selectAll('.chart > g')[0];
-
-        bars.forEach(() => {
-
-        });
-    });
-
-    it('each <text> should be at the right position', () => {
-        submission(numbers);
-        const bars = d3.selectAll('.chart > g')[0];
-
-        bars.forEach(() => {
-
+            expect(transform).to.be.a('string');
+            expect(transform.indexOf('translate(0,')).to.equal(0);
+            expect(positionY).to.equal(i * 20);
         });
     });
 
@@ -74,8 +61,46 @@ describe('Part 2: Coding a chart, manually', () => {
         submission(numbers);
         const bars = d3.selectAll('.chart > g')[0];
 
-        bars.forEach(() => {
+        bars.forEach((elt) => {
+            const text = d3.select(elt).select('text')[0][0];
+            const value = parseInt(text.innerHTML, 10);
 
+            expect(value).to.be.a('number');
+            expect(value).to.be.above(0);
+            expect(numbers.indexOf(value)).not.to.equal(-1);
+        });
+    });
+
+    it('each <text> should be at the right position', () => {
+        submission(numbers);
+        const bars = d3.selectAll('.chart > g')[0];
+
+        bars.forEach((elt) => {
+            const text = d3.select(elt).select('text')[0][0];
+            const value = parseInt(text.innerHTML, 10);
+            const x = parseFloat(text.getAttribute('x'));
+            const y = parseFloat(text.getAttribute('y'));
+            const dy = text.getAttribute('dy');
+
+            expect(x).to.equal(value * 10 - 3);
+            expect(y).to.equal(9.5);
+            expect(dy).to.equal('.35em');
+        });
+    });
+
+    it('each <rect> should be of the right dimensions', () => {
+        submission(numbers);
+        const bars = d3.selectAll('.chart > g')[0];
+
+        bars.forEach((elt) => {
+            const rect = d3.select(elt).select('rect')[0][0];
+            const text = d3.select(elt).select('text')[0][0];
+            const value = parseInt(text.innerHTML, 10);
+            const width = parseInt(rect.getAttribute('width'), 10);
+            const height = parseInt(rect.getAttribute('height'), 10);
+
+            expect(width).to.be.equal(value * 10);
+            expect(height).to.equal(19);
         });
     });
 });

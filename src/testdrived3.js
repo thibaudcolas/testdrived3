@@ -6,7 +6,7 @@ import updateNotifier from 'update-notifier';
 import Server from './lib/Server';
 import pkg from '../package.json';
 
-updateNotifier({pkg: pkg}).notify();
+updateNotifier({ pkg: pkg }).notify();
 
 workshopper({
     name: 'testdrived3',

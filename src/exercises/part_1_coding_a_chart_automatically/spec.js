@@ -17,13 +17,13 @@ describe('Part 1: Coding a chart, automatically', () => {
 
     it('should render a single container <div> with the class "chart"', () => {
         submission(numbers);
-        expect(d3.selectAll('body > div')).to.exist;
-        expect(d3.selectAll('.html-chart')).to.exist;
+        expect(d3.selectAll('body > div').size()).to.be.above(0);
+        expect(d3.selectAll('.html-chart').size()).to.be.above(0);
     });
 
     it('should have six <div> bars inside the container <div>', () => {
         submission(numbers);
-        expect(d3.selectAll('.html-chart > div')).to.exist;
+        expect(d3.selectAll('.html-chart > div').size()).to.be.above(0);
         expect(d3.selectAll('.html-chart > div').size()).to.equal(6);
     });
 

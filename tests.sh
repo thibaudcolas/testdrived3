@@ -33,3 +33,7 @@ $TESTDRIVED3 verify es5/exercises/part_1_scaling_to_fit/solution/solution.js
 $TESTDRIVED3 select "Part 2: Coding a chart, manually"
 $TESTDRIVED3 run es5/exercises/part_2_coding_a_chart_manually/solution/solution.js
 $TESTDRIVED3 verify es5/exercises/part_2_coding_a_chart_manually/solution/solution.js
+
+$TESTDRIVED3 select "Part 2: Coding a chart, automatically"
+$TESTDRIVED3 run es5/exercises/part_2_coding_a_chart_automatically/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/part_2_coding_a_chart_automatically/solution/solution.js

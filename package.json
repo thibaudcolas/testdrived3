@@ -57,7 +57,7 @@
     "test:output": "./tests.sh",
     "pretest": "npm run lint -s",
     "test": "npm run test:unit -s",
-    "test:ci": "npm run test -s && npm run test:unit:ci -s && npm run test:output -s",
+    "test:ci": "npm run build && npm run test -s && npm run test:unit:ci -s && npm run test:output -s",
     "start": "node src/index.js",
     "build": "rm -rf es5 && cp -R src es5 && babel src --out-dir es5 --ignore=tests,static,**/solution.js",
     "prepublish": "npm run build -s"

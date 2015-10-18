@@ -14,5 +14,14 @@ then
     echo "Aborting commit due to whitespace errors."
     exit 1
 else
-    npm test -s
+    # Fail on first line that fails.
+    set -e
+
+    NEW_FILES=$(git --no-pager diff --name-only --cached)
+    JS_FILES=$(echo "$NEW_FILES" | { grep .js$ || true; })
+
+    if [ -n "$JS_FILES" ];
+    then
+        npm run test -s
+    fi
 fi

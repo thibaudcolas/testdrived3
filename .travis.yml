@@ -1,17 +1,24 @@
 sudo: false
 language: node_js
 node_js:
-    # - "stable"
-    - "0.12"
-    # - 4.2
+  - '0.12'
 
 install:
-    - npm install
+  - npm install
 
 script:
-    - npm run test:ci
+  - npm run test:ci
 
 notifications:
-    email:
-        on_success: change
-        on_failure: always
+  email:
+    on_success: change
+    on_failure: always
+
+deploy:
+  provider: npm
+  email: thib@thib.me
+  api_key:
+    secure: DVXmx4Y/MJBJBTT8nGhFTkWBIeuiyYObYq77x75aoeHBqQRDI0kl9bFuh5bvI4fMOpncqIPMHylDpYk4b9KINiQYMzE8JZeRtg/wX0T7M6TxahKwniTQycVKKd83gLTWyEMMfC964JdOTMm/sHmcLkxIAnAzK63NLWMAtHCxPRUpaBpirYBzIWIih0BmLtGmyXNbKCWA5m3fW7kZzntIW+S9TlDiVW3kkbnMUVcnfBicZEcUGGvEwWEkxeTNLL1WFXWzlNC3ROMmeBV/bkrlurfr6O0EPvDOQWr/IqY+0Xfqp5WLDqxYeY/XBnvHsemaZsa4q2tuyOUV1p6tClqhX8V7oVJwfcRLw5X4BQkMPZKmHz0yUiCMhVVMmsCkonlHWoCwqeuMM65sjDHe+j5i/WdY6oxHXdmmnJpLfB8yJvz12TFmiEno2dQ0ZkziC5SQVV5BJZ7TrlNZmWpISmmCtuYZJ68EFHJ8hCaO0nI4TBmc/YeuE0nutwJCUmkoMUarU7exhVkaJLeHK0TBnypzs8ANVl+fQGDpuhjkJ4ik53IH3PAc/FEVQMXCQU/O9eyodiSLVpjvWP7CEL/C1QjAsYdr/Ul+oe9xfVWXvFLqs0nfScrmPKPR/L64wjX0BpG0jS74jt8stZShivuqGXpQCzUOpi/+00++6f0kYGrdv4o=
+  on:
+    tags: true
+    repo: ThibWeb/testdrived3

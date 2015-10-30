@@ -6,10 +6,6 @@ module.exports = function(numbers) {
     var width = 420;
     var barHeight = 20;
 
-    // d3.select('body')
-    //     .append('svg')
-    //     .attr('class', 'chart');
-
     var widthScale = d3.scale.linear()
         .domain([0, d3.max(numbers)])
         .range([0, width]);
@@ -17,10 +13,6 @@ module.exports = function(numbers) {
     var chart = d3.select('.chart')
         .attr('width', width)
         .attr('height', barHeight * numbers.length);
-
-    // console.log(document.body.outerHTML);
-    // console.log(document.querySelectorAll('.chart')[0].outerHTML);
-    // console.log(d3.select('.chart').size());
 
     var bar = chart.selectAll('g')
         .data(numbers)

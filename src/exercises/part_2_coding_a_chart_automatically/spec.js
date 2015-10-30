@@ -7,7 +7,8 @@ const submission = global.submission;
 
 describe('Part 2: Coding a chart, automatically', () => {
     beforeEach('', () => {
-        d3.selectAll('.chart > g').remove();
+        d3.select('.chart').remove();
+        d3.select('body').append('svg').attr('class', 'chart');
     });
 
     it('should export a function', () => {

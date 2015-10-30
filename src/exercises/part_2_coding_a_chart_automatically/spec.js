@@ -58,49 +58,49 @@ describe('Part 2: Coding a chart, automatically', () => {
         });
     });
 
-    it('each <text> should have the right value', () => {
+    it('each <text> should have the right value, according to its bound data', () => {
         submission(numbers);
-        const bars = d3.selectAll('.chart > g')[0];
+        const bars = d3.selectAll('.chart > g');
 
-        bars.forEach((elt) => {
-            const text = d3.select(elt).select('text')[0][0];
-            const value = parseInt(text.innerHTML, 10);
+        bars.each((d, i) => {
+            const bar = d3.select(bars[0][i]);
+            const text = parseInt(bar.text(), 10);
 
-            expect(value).to.be.a('number');
-            expect(value).to.be.above(0);
-            expect(numbers.indexOf(value)).not.to.equal(-1);
+            expect(text).to.be.a('number');
+            expect(text).to.be.above(0);
+            expect(numbers.indexOf(text)).not.to.equal(-1);
+            expect(text).to.equal(d);
         });
     });
 
-    it('each <text> should be at the right position', () => {
+    it('each <text> should be at the right position according to its bound data', () => {
         submission(numbers);
-        const bars = d3.selectAll('.chart > g')[0];
+        const bars = d3.selectAll('.chart > g');
 
-        bars.forEach((elt) => {
-            const text = d3.select(elt).select('text')[0][0];
-            const value = parseInt(text.innerHTML, 10);
-            const x = parseFloat(text.getAttribute('x'));
-            const y = parseFloat(text.getAttribute('y'));
-            const dy = text.getAttribute('dy');
+        bars.each((d, i) => {
+            const bar = d3.select(bars[0][i]);
+            const text = bar.select('text');
+            const x = parseFloat(text.attr('x'));
+            const y = parseFloat(text.attr('y'));
+            const dy = text.attr('dy');
 
-            expect(x).to.be.closeTo(value * 10 - 3, 0.05);
+            expect(x).to.be.closeTo(d * 10 - 3, 0.05);
             expect(y).to.equal(10);
             expect(dy).to.equal('.35em');
         });
     });
 
-    it('each <rect> should be of the right dimensions', () => {
+    it('each <rect> should be of the right dimensions according to its bound data', () => {
         submission(numbers);
-        const bars = d3.selectAll('.chart > g')[0];
+        const bars = d3.selectAll('.chart > g');
 
-        bars.forEach((elt) => {
-            const rect = d3.select(elt).select('rect')[0][0];
-            const text = d3.select(elt).select('text')[0][0];
-            const value = parseInt(text.innerHTML, 10);
-            const width = parseInt(rect.getAttribute('width'), 10);
-            const height = parseInt(rect.getAttribute('height'), 10);
+        bars.each((d, i) => {
+            const bar = d3.select(bars[0][i]);
+            const rect = bar.select('rect');
+            const width = parseInt(rect.attr('width'), 10);
+            const height = parseInt(rect.attr('height'), 10);
 
-            expect(width).to.be.equal(value * 10);
+            expect(width).to.be.equal(d * 10);
             expect(height).to.equal(19);
         });
     });

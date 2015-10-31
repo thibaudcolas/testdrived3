@@ -3,15 +3,15 @@
 var d3 = require('d3');
 
 module.exports = function(numbers) {
-    var width = 420;
+    var chartWidth = 420;
     var barHeight = 20;
 
     var widthScale = d3.scale.linear()
         .domain([0, d3.max(numbers)])
-        .range([0, width]);
+        .range([0, chartWidth]);
 
     var chart = d3.select('.chart')
-        .attr('width', width)
+        .attr('width', chartWidth)
         .attr('height', barHeight * numbers.length);
 
     var bar = chart.selectAll('g')
@@ -20,7 +20,7 @@ module.exports = function(numbers) {
         .attr('transform', function(d, i) { return 'translate(0,' + (i * barHeight) + ')'; });
 
     bar.append('rect')
-        .attr('width', widthScale)
+        .attr('width', function(d) { return widthScale(d); })
         .attr('height', barHeight - 1);
 
     bar.append('text')

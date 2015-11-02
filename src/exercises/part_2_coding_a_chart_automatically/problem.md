@@ -9,7 +9,7 @@ We'll need to:
 - [ ] Position the text within the bars according to the `widthScale` and the `barHeight`.
 - [ ] Set the text to be the number that is being charted for each bar.
 
-The first three items on the list are very similar to what we did before, and taken care of for you. You'll just need to take care of the last three.
+The first three items on the list are very similar to what we did before, and taken care of for you. The last three are yours to take care of.
 
 ----------------------------------------------------------------------
 

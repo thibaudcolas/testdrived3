@@ -3,6 +3,8 @@
 
     "rules": {
         "indent": [2, 4],
-        "no-console": [0]
+        "no-console": [0],
+        "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],
+        "id-length": [1, {"min": 2, "exceptions": ["x", "y", "e", "i", "j", "k", "d", "n", "_", "$"]}]
     }
 }

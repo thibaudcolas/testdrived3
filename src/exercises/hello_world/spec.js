@@ -5,7 +5,6 @@ const helloWorld = global.submission;
 
 describe('Hello, World!', () => {
     it('should export a function', () => {
-        expect(helloWorld).to.exist;
         expect(helloWorld).to.be.a('function');
     });
 

@@ -1,4 +1,4 @@
-import { describe, it } from 'mocha';
+import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
@@ -12,7 +12,6 @@ describe('Part 2: Coding a chart, automatically', () => {
     });
 
     it('should export a function', () => {
-        expect(submission).to.exist;
         expect(submission).to.be.a('function');
     });
 

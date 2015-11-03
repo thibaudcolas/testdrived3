@@ -1,4 +1,4 @@
-import { describe, it } from 'mocha';
+import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
@@ -11,19 +11,11 @@ describe('Part 1: Scaling to fit', () => {
     });
 
     it('should export a function', () => {
-        expect(submission).to.exist;
         expect(submission).to.be.a('function');
     });
 
-    it('should render a single container <div> with the class "chart"', () => {
+    it('should have six <div> bars inside the container', () => {
         submission(numbers);
-        expect(d3.selectAll('body > div')).to.exist;
-        expect(d3.selectAll('.chart')).to.exist;
-    });
-
-    it('should have six <div> bars inside the container <div>', () => {
-        submission(numbers);
-        expect(d3.selectAll('.html-chart > div')).to.exist;
         expect(d3.selectAll('.html-chart > div').size()).to.equal(6);
     });
 

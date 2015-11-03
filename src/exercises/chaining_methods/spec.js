@@ -1,4 +1,4 @@
-import { describe, it } from 'mocha';
+import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
@@ -11,7 +11,6 @@ describe('Chaining methods', () => {
     });
 
     it('should export a function', () => {
-        expect(submission).to.exist;
         expect(submission).to.be.a('function');
     });
 
@@ -21,9 +20,9 @@ describe('Chaining methods', () => {
     });
 
     it('should add a <h1> tag on the page', () => {
-        expect(d3.select('h1').empty()).to.be.true;
+        expect(d3.select('h1').empty()).to.equal(true);
         submission(numbers);
-        expect(d3.select('h1').empty()).to.be.false;
+        expect(d3.select('h1').empty()).to.equal(false);
     });
 
     it('should give the <h1> the right class', () => {

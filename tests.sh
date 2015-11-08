@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 TESTDRIVED3="node es5/testdrived3.js"
 

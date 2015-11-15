@@ -21,6 +21,7 @@ Install the project with:
 ```sh
 git clone git@github.com:ThibWeb/testdrived3.git
 cd testdrived3
+nvm install
 npm install
 npm install -g eslint babel-eslint eslint-config-airbnb
 ./.githooks/deploy

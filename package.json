@@ -25,7 +25,9 @@
     "node": ">=0.12"
   },
   "preferGlobal": true,
-  "bin": "./es5/testdrived3.js",
+  "bin": {
+    "testdrived3": "./es5/testdrived3.js"
+  },
   "dependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",

@@ -6,5 +6,8 @@
 .githooks/
 .gitignore
 .travis.yml
+.nvmrc
+.npmignore
 src/
 tests/
+tests.sh

@@ -37,3 +37,7 @@ $TESTDRIVED3 verify es5/exercises/part_2_coding_a_chart_manually/solution/soluti
 $TESTDRIVED3 select 'Part 2: Coding a chart, automatically'
 $TESTDRIVED3 run es5/exercises/part_2_coding_a_chart_automatically/solution/solution.js
 $TESTDRIVED3 verify es5/exercises/part_2_coding_a_chart_automatically/solution/solution.js
+
+$TESTDRIVED3 select 'Part 3: Rotating into columns'
+$TESTDRIVED3 run es5/exercises/part_3_rotating_into_columns/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/part_3_rotating_into_columns/solution/solution.js

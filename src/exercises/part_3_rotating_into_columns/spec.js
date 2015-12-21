@@ -2,7 +2,7 @@ import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
-const frequencies = { A: 0.08167, B: 0.01492, C: 0.02782, D: 0.04253, E: 0.12702, F: 0.02288, G: 0.02015, H: 0.06094, I: 0.06966, J: 0.00153, K: 0.00772, L: 0.04025, M: 0.02406, N: 0.06749, O: 0.07507, P: 0.01929, Q: 0.00095, R: 0.05987, S: 0.06327, T: 0.09056, U: 0.02758, V: 0.00978, W: 0.02360, X: 0.00150, Y: 0.01974, Z: 0.00074, };
+const frequencies = [ { letter: 'A', value: 0.08167 }, { letter: 'B', value: 0.01492 }, { letter: 'C', value: 0.02782 }, { letter: 'D', value: 0.04253 }, { letter: 'E', value: 0.12702 }, { letter: 'F', value: 0.02288 }, { letter: 'G', value: 0.02015 }, { letter: 'H', value: 0.06094 }, { letter: 'I', value: 0.06966 }, { letter: 'J', value: 0.00153 }, { letter: 'K', value: 0.00772 }, { letter: 'L', value: 0.04025 }, { letter: 'M', value: 0.02406 }, { letter: 'N', value: 0.06749 }, { letter: 'O', value: 0.07507 }, { letter: 'P', value: 0.01929 }, { letter: 'Q', value: 0.00095 }, { letter: 'R', value: 0.05987 }, { letter: 'S', value: 0.06327 }, { letter: 'T', value: 0.09056 }, { letter: 'U', value: 0.02758 }, { letter: 'V', value: 0.00978 }, { letter: 'W', value: 0.02360 }, { letter: 'X', value: 0.00150 }, { letter: 'Y', value: 0.01974 }, { letter: 'Z', value: 0.00074 } ];
 const submission = global.submission;
 
 describe('Part 3: Rotating into columns', () => {

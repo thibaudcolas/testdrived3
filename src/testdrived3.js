@@ -22,9 +22,9 @@ workshopper({
             handler(workshop) {
                 const port = process.env.PORT || 3333;
                 const submissionPath = path.resolve(process.cwd(), process.argv[3]);
-                const currentExercice = workshop.current;
+                const currentExercise = workshop.current;
 
-                const server = new Server(port, submissionPath, currentExercice);
+                const server = new Server(port, submissionPath, currentExercise);
 
                 server.watch();
             },

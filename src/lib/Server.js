@@ -4,17 +4,22 @@ import browserify from 'browserify';
 import babelify from 'babelify';
 import browserSync from 'browser-sync';
 
+import { frequencyExercises } from '../lib/data';
+
 const bs = browserSync.create();
 
 export default class Server {
-    constructor(port, submissionPath, currentExercice) {
+    constructor(port, submissionPath, currentExercise) {
         this.port = port;
         this.submissionPath = submissionPath;
-        this.currentExercice = currentExercice;
+        this.currentExercise = currentExercise;
+
+        const isFrequencyExercice = frequencyExercises.indexOf(this.currentExercise) !== -1;
+        const entryFile = isFrequencyExercice ? 'main-frequencies.js': 'main-numbers.js';
 
         this.basepath = path.join(__dirname, '..', 'static');
         this.copyPath = path.join(__dirname, '..', 'static', 'submission.js');
-        this.entryPath = path.join(__dirname, '..', 'static', 'main.js');
+        this.entryPath = path.join(__dirname, '..', 'static', entryFile);
         this.outputPath = path.join(__dirname, '..', 'static', 'bundle.js');
     }
 

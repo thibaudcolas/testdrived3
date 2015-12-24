@@ -35,3 +35,7 @@ export const frequencies = [
     { letter: 'Y', value: 0.01974 },
     { letter: 'Z', value: 0.00074 },
 ];
+
+export const frequencyExercises = [
+    'Part 3: Rotating into columns',
+];

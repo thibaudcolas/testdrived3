@@ -2,7 +2,8 @@ import '../../lib/html-document';
 import runner from '../../lib/runner';
 import print from '../../lib/print';
 
-const numbers = [4, 8, 15, 16, 23, 42];
+import { numbers } from '../../lib/data';
+
 
 function runFunction(submission) {
     submission(numbers);

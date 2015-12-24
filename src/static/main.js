@@ -1,7 +1,8 @@
+import { numbers, frequencies } from '../lib/data';
+
 import submission from './submission';
 
-const numbers = [4, 8, 15, 16, 23, 42];
-
 console.log(`numbers = [${numbers}]`);
+console.log(`frequencies = [${frequencies}]`);
 
 submission(numbers);

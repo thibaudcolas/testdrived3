@@ -2,7 +2,8 @@ import { describe, beforeEach, it } from 'mocha';
 import { expect } from 'chai';
 import d3 from 'd3';
 
-const numbers = [4, 8, 15, 16, 23, 42];
+import { numbers } from '../../lib/data';
+
 const submission = global.submission;
 
 describe('Chaining methods', () => {

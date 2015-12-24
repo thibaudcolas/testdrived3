@@ -7,9 +7,10 @@ import browserSync from 'browser-sync';
 const bs = browserSync.create();
 
 export default class Server {
-    constructor(port, submissionPath) {
+    constructor(port, submissionPath, currentExercice) {
         this.port = port;
         this.submissionPath = submissionPath;
+        this.currentExercice = currentExercice;
 
         this.basepath = path.join(__dirname, '..', 'static');
         this.copyPath = path.join(__dirname, '..', 'static', 'submission.js');

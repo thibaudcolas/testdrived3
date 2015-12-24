@@ -19,9 +19,12 @@ workshopper({
             name: 'server',
             menu: false,
             short: 's',
-            handler() {
+            handler(workshop) {
+                const port = process.env.PORT || 3333;
                 const submissionPath = path.resolve(process.cwd(), process.argv[3]);
-                const server = new Server(process.env.PORT || 3333, submissionPath);
+                const currentExercice = workshop.current;
+
+                const server = new Server(port, submissionPath, currentExercice);
 
                 server.watch();
             },

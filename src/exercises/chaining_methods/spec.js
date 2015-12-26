@@ -21,7 +21,6 @@ describe('Chaining methods', () => {
     });
 
     it('should add a <h1> tag on the page', () => {
-        expect(d3.select('h1').empty()).to.equal(true);
         submission(numbers);
         expect(d3.select('h1').empty()).to.equal(false);
     });
@@ -33,6 +32,8 @@ describe('Chaining methods', () => {
 
     it('should set the <h1> text to "D3 bar chart"', () => {
         submission(numbers);
-        expect(d3.select('h1').html()).to.equal('D3 bar chart');
+        expect(d3.select('h1').html()).to.contain('D3');
+        expect(d3.select('h1').html()).to.contain('bar');
+        expect(d3.select('h1').html()).to.contain('chart');
     });
 });

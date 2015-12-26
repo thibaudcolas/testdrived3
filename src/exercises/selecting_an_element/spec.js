@@ -16,7 +16,6 @@ describe('Selecting an element', () => {
     });
 
     it('should add a <h1> tag on the page', () => {
-        expect(d3.select('h1').empty()).to.equal(true);
         submission(numbers);
         expect(d3.select('h1').empty()).to.equal(false);
     });

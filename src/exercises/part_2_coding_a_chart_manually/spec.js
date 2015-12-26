@@ -17,7 +17,6 @@ describe('Part 2: Coding a chart, manually', () => {
 
     it('should have a container <svg> with a "chart" class inside the body', () => {
         submission(numbers);
-        expect(d3.select('body > svg').size()).to.be.above(0);
         expect(d3.select('body > svg.chart').size()).to.be.above(0);
     });
 
@@ -29,7 +28,6 @@ describe('Part 2: Coding a chart, manually', () => {
 
     it('should have six <g> bars inside the container .chart', () => {
         submission(numbers);
-        expect(d3.selectAll('.chart > g').size()).to.be.above(0);
         expect(d3.selectAll('.chart > g').size()).to.equal(6);
     });
 
@@ -52,7 +50,7 @@ describe('Part 2: Coding a chart, manually', () => {
             const positionY = parseInt(transform.split('translate(0,')[1], 10);
 
             expect(transform).to.be.a('string');
-            expect(transform.indexOf('translate(0,')).to.equal(0);
+            expect(transform).to.contain('translate');
             expect(positionY).to.equal(i * 20);
         });
     });
@@ -66,8 +64,7 @@ describe('Part 2: Coding a chart, manually', () => {
             const value = parseInt(text.innerHTML, 10);
 
             expect(value).to.be.a('number');
-            expect(value).to.be.above(0);
-            expect(numbers.indexOf(value)).not.to.equal(-1);
+            expect(numbers).to.contain(value);
         });
     });
 
@@ -80,11 +77,9 @@ describe('Part 2: Coding a chart, manually', () => {
             const value = parseInt(text.innerHTML, 10);
             const x = parseFloat(text.getAttribute('x'));
             const y = parseFloat(text.getAttribute('y'));
-            const dy = text.getAttribute('dy');
 
             expect(x).to.equal(value * 10 - 3);
             expect(y).to.equal(9.5);
-            expect(dy).to.equal('.35em');
         });
     });
 

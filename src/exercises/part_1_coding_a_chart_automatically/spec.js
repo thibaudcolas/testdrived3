@@ -17,7 +17,6 @@ describe('Part 1: Coding a chart, automatically', () => {
 
     it('should have six <div> bars inside the container', () => {
         submission(numbers);
-        expect(d3.selectAll('.html-chart > div').size()).to.be.above(0);
         expect(d3.selectAll('.html-chart > div').size()).to.equal(6);
     });
 

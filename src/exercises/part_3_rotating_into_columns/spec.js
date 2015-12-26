@@ -23,7 +23,6 @@ describe('Part 3: Rotating into columns', () => {
 
     it('should have a container <svg> with a "chart" class inside the body', () => {
         submission(frequencies);
-        expect(d3.select('body > svg').size()).to.be.above(0);
         expect(d3.select('body > svg.chart').size()).to.be.above(0);
     });
 
@@ -35,7 +34,6 @@ describe('Part 3: Rotating into columns', () => {
 
     it('should have 26 <g> bars inside the container .chart', () => {
         submission(frequencies);
-        expect(d3.selectAll('.chart > g').size()).to.be.above(0);
         expect(d3.selectAll('.chart > g').size()).to.equal(26);
     });
 
@@ -58,7 +56,7 @@ describe('Part 3: Rotating into columns', () => {
             const positionX = parseFloat(transform.split('translate(')[1].split(',0)')[0]);
 
             expect(transform).to.be.a('string');
-            expect(transform.indexOf('translate(')).to.equal(0);
+            expect(transform).to.contain('translate');
             expect(positionX).to.be.closeTo(i * barWidth, 0.05);
         });
     });
@@ -69,12 +67,10 @@ describe('Part 3: Rotating into columns', () => {
 
         bars.each((d, i) => {
             const bar = d3.select(bars[0][i]);
-            const text = parseFloat(bar.text());
+            const value = parseFloat(bar.text());
 
-            expect(text).to.be.a('number');
-            expect(text).to.be.above(0);
-            expect(frequencies.some(freq => freq.value === text)).to.equal(true);
-            expect(text).to.equal(d.value);
+            expect(value).to.be.a('number');
+            expect(value).to.equal(d.value);
         });
     });
 
@@ -89,7 +85,7 @@ describe('Part 3: Rotating into columns', () => {
             const y = parseFloat(text.attr('y'));
 
             expect(x).to.equal(barWidth / 2);
-            expect(y).to.equal(heightScale(d.value) + 3);
+            expect(y).to.be.closeTo(heightScale(d.value), 3);
         });
     });
 
@@ -103,8 +99,8 @@ describe('Part 3: Rotating into columns', () => {
             const width = parseFloat(rect.attr('width'));
             const height = parseFloat(rect.attr('height'));
 
-            expect(width).to.equal(barWidth - 1);
-            expect(height).to.equal(500 - heightScale(d.value));
+            expect(width).to.be.closeTo(barWidth, 1);
+            expect(height).to.be.closeTo(500 - heightScale(d.value), 5);
         });
     });
 });

@@ -1,13 +1,31 @@
 In the previous parts of this tutorial we made a basic bar chart in HTML and then in SVG; now, we’ll improve the display by rotating the chart into columns and adding axes. We’ll also switch to a real dataset, showing the relative frequency of letters in the English language.
 
-Here is our new dataset, with the frequency of each letter in percent:
+Here is our new dataset, with the frequency of each letter in percent, as a bar chart:
 
 ```
-  A   B   C   D   E   F   G   H   I   J   K   L   M  
- 8.1 1.4 2.7 4.2 2.7 2.2 2.0 6.0 6.9 0.1 0.7 4.0 2.4 
-
-  N   O   P   Q   R   S   T   U   V   W   X   Y   Z  
- 6.7 7.5 1.9 0.0 5.9 6.3 9.0 2.7 0.9 2.3 0.1 1.9 0.0 
+                                      █
+                                      █
+█                                     █
+█                                     █
+█                           █         █
+█               █           █         █
+█               █         █ █         █
+█             █ █         █ █       █ █
+█             █ █         █ █     █ █ █
+█             █ █         █ █     █ █ █
+█             █ █         █ █     █ █ █
+█             █ █         █ █     █ █ █
+█     █       █ █     █   █ █     █ █ █
+█     █       █ █     █   █ █     █ █ █
+█     █       █ █     █   █ █     █ █ █
+█   █ █ █     █ █     █   █ █     █ █ █ █
+█   █ █ █     █ █     █ █ █ █     █ █ █ █   █
+█   █ █ █ █ █ █ █     █ █ █ █ █   █ █ █ █   █   █
+█   █ █ █ █ █ █ █     █ █ █ █ █   █ █ █ █   █   █
+█ █ █ █ █ █ █ █ █     █ █ █ █ █   █ █ █ █   █   █
+█ █ █ █ █ █ █ █ █   █ █ █ █ █ █   █ █ █ █ █ █   █
+█ █ █ █ █ █ █ █ █   █ █ █ █ █ █   █ █ █ █ █ █   █
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 ```
 
 Rotating a bar chart into a column chart largely involves swapping x with y. However, a number of smaller incidental changes are also required. This is the cost of working directly with SVG rather than using a higher-level visualization tool. On the other hand, SVG offers greater customizability; and SVG is a web standard, so we can use the browser’s developer tools like the element inspector, and use SVG for things beyond visualization.

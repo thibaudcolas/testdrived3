@@ -47,6 +47,17 @@ describe('Part 3: Rotating into columns', () => {
         });
     });
 
+    it('each bar should have a width that is not fixed', () => {
+        submission(frequencies);
+        const rects = d3.selectAll('rect')[0];
+
+        rects.forEach((elt) => {
+            const width = parseInt(elt.getAttribute('width'), 10);
+
+            expect(width).to.not.equal(19);
+        });
+    });
+
     it('each bar should be positioned with a translate transform, according to its order', () => {
         submission(frequencies);
         const bars = d3.selectAll('.chart > g')[0];

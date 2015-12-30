@@ -7,6 +7,7 @@ module.exports = function(frequencies) {
     var chartHeight = 500;
     var barWidth = chartWidth / frequencies.length;
 
+    // The range now goes from the height of the chart to 0, since SVG coordinates start at the top.
     var heightScale = d3.scale.linear()
         .domain([0, d3.max(frequencies, function(d) { return d.value; })])
         .range([chartHeight, 0]);
@@ -15,6 +16,7 @@ module.exports = function(frequencies) {
         .attr('width', chartWidth)
         .attr('height', chartHeight);
 
+    // We use the barWidth to move each bar to its position.
     var bar = chart.selectAll('g')
         .data(frequencies)
     .enter().append('g')

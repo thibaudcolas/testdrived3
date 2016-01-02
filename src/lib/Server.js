@@ -27,7 +27,7 @@ export default class Server {
         fs.readFile(file, {encoding: 'utf-8'}, (error, content) => {
             fs.writeFile(this.copyPath, content, cb);
         });
-    };
+    }
 
     watch() {
         bs.watch(this.submissionPath, () => {
@@ -46,12 +46,7 @@ export default class Server {
 
         process.stdout.write('Loading your solution... ');
 
-        bundler.bundle((error, js) => {
-            if (error) {
-                console.log(error);
-                bs.notify(error.message, 10000);
-            }
-
+        bundler.bundle((err, js) => {
             fs.writeFile(this.outputPath, js, (error) => {
                 if (error) {
                     console.log(error);
@@ -61,13 +56,17 @@ export default class Server {
 
                 if (!bs.active) {
                     this.start();
-                } else {
+                } else if (!err && !error) {
                     bs.reload();
                 }
 
             });
 
-        });
+        })
+        .on('error', function handleError(err) {
+            console.log(err.codeFrame);
+            bs.notify(err.message, 10000);
+        })
     }
 
     start() {
@@ -75,13 +74,12 @@ export default class Server {
         bs.init({
             server: this.basepath,
             port: this.port,
-            notify: false,
             ui: false,
             logLevel: 'silent',
         });
 
         console.log(`Point your browser to http://localhost:${this.port}/`);
 
-        bs.watch()
+        bs.watch();
     }
 }

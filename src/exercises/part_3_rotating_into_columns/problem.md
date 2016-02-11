@@ -79,7 +79,6 @@ module.exports = function(frequencies) {
         .attr('dy', '.75em')
         .text(function(d) {/* TODO The text value should be `d.value`, not just `d`. */);
 };
-
 ```
 
 ----------------------------------------------------------------------

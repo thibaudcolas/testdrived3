@@ -40,7 +40,7 @@ module.exports = function(numbers) {
     .enter().append('g')
         .attr('transform', function(d, i) { return 'translate(0,' + (i * barHeight) + ')'; });
 
-    // TODO The width of each <rect> is determined by the x.
+    // TODO The width of each <rect> is determined by the scale.
     // This is the same as what we did in HTML, except we don't need to mention that the value is in "px".
     bar.append('rect')
         .attr('width', function(d) { /* TODO Set the width with the scale. */ })
@@ -49,7 +49,7 @@ module.exports = function(numbers) {
     // TODO Position the text on the right, vertically centered.
     // TODO Set the text according to the number, as in the HTML exercises.
     bar.append('text')
-        .attr('x', function(d) { /* TODO set the x coord with x, -3 for padding. */ })
+        .attr('x', function(d) { /* TODO set the x coord with the scale, -3 for padding. */ })
         .attr('y', barHeight / 2)
         .attr('dy', '.35em')
         .text(function(d) { /* Should be equal to the bound number, d. */ });

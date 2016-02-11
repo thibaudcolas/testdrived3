@@ -6,10 +6,13 @@ import { frequencies } from '../../lib/data';
 
 const submission = global.submission;
 
-const barWidth = 960 / 26;
 const heightScale = d3.scale.linear()
     .domain([0, d3.max(frequencies, d => d.value)])
     .range([500, 0]);
+
+const widthScale = d3.scale.ordinal()
+    .domain(frequencies.map(d => d.letter))
+    .rangeRoundBands([0, 960], 0.1);
 
 describe('Part 3: Encoding ordinal data', () => {
     beforeEach('', () => {
@@ -58,17 +61,18 @@ describe('Part 3: Encoding ordinal data', () => {
         });
     });
 
-    it('each bar should be positioned with a translate transform, according to its order', () => {
+    it('each bar should be positioned with a translate transform, according an ordinal scale', () => {
         submission(frequencies);
-        const bars = d3.selectAll('.chart > g')[0];
+        const bars = d3.selectAll('.chart > g');
 
-        bars.forEach((elt, i) => {
-            const transform = elt.getAttribute('transform');
+        bars.each((d, i) => {
+            const bar = d3.select(bars[0][i]);
+            const transform = bar.attr('transform');
             const positionX = parseFloat(transform.split('translate(')[1].split(',0)')[0]);
 
             expect(transform).to.be.a('string');
             expect(transform).to.contain('translate');
-            expect(positionX).to.be.closeTo(i * barWidth, 0.05);
+            expect(positionX).to.be.closeTo(widthScale(d.letter), 1 + 0.05);
         });
     });
 
@@ -85,7 +89,7 @@ describe('Part 3: Encoding ordinal data', () => {
         });
     });
 
-    it('each <text> should be at the right position according to its bound data', () => {
+    it('each <text> should be at the right position according to the scale\'s range band', () => {
         submission(frequencies);
         const bars = d3.selectAll('.chart > g');
 
@@ -95,12 +99,12 @@ describe('Part 3: Encoding ordinal data', () => {
             const x = parseFloat(text.attr('x'));
             const y = parseFloat(text.attr('y'));
 
-            expect(x).to.equal(barWidth / 2);
+            expect(x).to.be.closeTo(widthScale.rangeBand() / 2, 1);
             expect(y).to.be.closeTo(heightScale(d.value), 3);
         });
     });
 
-    it('each <rect> should be of the right dimensions according to its bound data', () => {
+    it('each <rect> should be of the right dimensions according to its bound data and the scale', () => {
         submission(frequencies);
         const bars = d3.selectAll('.chart > g');
 
@@ -110,7 +114,7 @@ describe('Part 3: Encoding ordinal data', () => {
             const width = parseFloat(rect.attr('width'));
             const height = parseFloat(rect.attr('height'));
 
-            expect(width).to.be.closeTo(barWidth, 1);
+            expect(width).to.be.closeTo(widthScale.rangeBand(), 1);
             expect(height).to.be.closeTo(500 - heightScale(d.value), 5);
         });
     });

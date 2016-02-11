@@ -39,4 +39,5 @@ export const frequencies = [
 export const frequencyExercises = [
     'Part 3: Rotating into columns',
     'Part 3: Encoding ordinal data',
+    'Part 3: Preparing margins',
 ];

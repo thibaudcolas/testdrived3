@@ -45,3 +45,7 @@ $TESTDRIVED3 verify es5/exercises/part_3_rotating_into_columns/solution/solution
 $TESTDRIVED3 select 'Part 3: Encoding ordinal data'
 $TESTDRIVED3 run es5/exercises/part_3_encoding_ordinal_data/solution/solution.js
 $TESTDRIVED3 verify es5/exercises/part_3_encoding_ordinal_data/solution/solution.js
+
+$TESTDRIVED3 select 'Part 3: Preparing margins'
+$TESTDRIVED3 run es5/exercises/part_3_preparing_margins/solution/solution.js
+$TESTDRIVED3 verify es5/exercises/part_3_preparing_margins/solution/solution.js

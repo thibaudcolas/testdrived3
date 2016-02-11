@@ -10,6 +10,10 @@ __testdrived3__ is an intro to [D3](http://d3js.org/) via a set of self-guided w
 3. Run `testdrived3`
 4. **.. profit!**
 
+## Troubleshooting
+
+This workshop relies on features only available in Node version 4 and above. To check your version, run `node --version` from the command line.
+
 ## Contributing
 
 Install the project with:

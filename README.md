@@ -1,7 +1,7 @@
 Test-drive D3 for much win! [![npm](https://img.shields.io/npm/v/testdrived3.svg?style=flat-square)](https://www.npmjs.com/package/testdrived3) [![Build Status](https://img.shields.io/travis/ThibWeb/testdrived3.svg?style=flat-square)](https://travis-ci.org/ThibWeb/testdrived3)
 ==========
 
-__testdrived3__ is an intro to [D3](http://d3js.org/) via a set of self-guided workshops. It is based on the [Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/), [Part 2](http://bost.ocks.org/mike/bar/2/) and [Part 3](http://bost.ocks.org/mike/bar/3/) tutorials from D3's creator, Mike Bostock.
+__testdrived3__ is an intro to [D3](http://d3js.org/) via a set of self-guided workshops. It is based on the great [Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/) tutorials from D3's creator, Mike Bostock.
 
 > TODO Screenshot
 

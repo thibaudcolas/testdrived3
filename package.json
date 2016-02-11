@@ -16,10 +16,16 @@
     "d3",
     "d3.js",
     "chart",
+    "viz",
+    "dataviz",
     "svg",
+    "jsdom",
+    "tutorial",
     "nodeschool",
     "nodeschool.io",
-    "workshopper"
+    "workshopper",
+    "workshop",
+    "learnyounode"
   ],
   "engines": {
     "node": ">=4.0.0"

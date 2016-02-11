@@ -6,8 +6,7 @@ module.exports = function(frequencies) {
     var chartWidth = 960;
     var chartHeight = 500;
 
-    // We've replaced the barWidth with a scale to stop relying on the order
-    // of the data points in the array, and do less math ourselves.
+    // We've replaced the barWidth with a scale to do less math ourselves.
     var widthScale = d3.scale.ordinal()
         .domain(frequencies.map(function(d) { return d.letter; }))
         .rangeRoundBands([0, chartWidth], 0.1);

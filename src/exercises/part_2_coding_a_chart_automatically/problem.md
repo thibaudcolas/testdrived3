@@ -2,11 +2,11 @@ Now let's put it all together and build our first dynamic D3 SVG chart!
 
 We'll need to:
 
-- [X] Create a scale `widthScale`, as before, to draw our chart in a given amount of space.
+- [X] Create a scale `x`, as before, to draw our chart in a given amount of space.
 - [X] Set our chart's `width` and `height` to define what space it should take.
 - [X] Create the bars, and position them inside that space.
-- [ ] Dimension the bars according to our `widthScale`.
-- [ ] Position the text within the bars according to the `widthScale` and the `barHeight`.
+- [ ] Dimension the bars according to our `x`.
+- [ ] Position the text within the bars according to the `x` and the `barHeight`.
 - [ ] Set the text to be the number that is being charted for each bar.
 
 The first three items on the list are very similar to what we did before, and taken care of for you. The last three are yours to tackle.
@@ -21,16 +21,16 @@ Here is some boilerplate to get you started:
 var d3 = require('d3');
 
 module.exports = function(numbers) {
-    var chartWidth = 420;
+    var width = 420;
     var barHeight = 20;
 
-    var widthScale = d3.scale.linear()
+    var x = d3.scale.linear()
         .domain([0, d3.max(numbers)])
-        .range([0, chartWidth]);
+        .range([0, width]);
 
     // Now this is an <svg> element instead of a <div>.
     var chart = d3.select('.chart')
-        .attr('width', chartWidth)
+        .attr('width', width)
         .attr('height', barHeight * numbers.length);
 
     // Bind, then create a <g> tag for each number and position it.
@@ -40,7 +40,7 @@ module.exports = function(numbers) {
     .enter().append('g')
         .attr('transform', function(d, i) { return 'translate(0,' + (i * barHeight) + ')'; });
 
-    // TODO The width of each <rect> is determined by the widthScale.
+    // TODO The width of each <rect> is determined by the x.
     // This is the same as what we did in HTML, except we don't need to mention that the value is in "px".
     bar.append('rect')
         .attr('width', function(d) { /* TODO Set the width with the scale. */ })
@@ -49,7 +49,7 @@ module.exports = function(numbers) {
     // TODO Position the text on the right, vertically centered.
     // TODO Set the text according to the number, as in the HTML exercises.
     bar.append('text')
-        .attr('x', function(d) { /* TODO set the x coord with widthScale, -3 for padding. */ })
+        .attr('x', function(d) { /* TODO set the x coord with x, -3 for padding. */ })
         .attr('y', barHeight / 2)
         .attr('dy', '.35em')
         .text(function(d) { /* Should be equal to the bound number, d. */ });

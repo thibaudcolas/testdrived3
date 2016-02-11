@@ -3,7 +3,7 @@
 var d3 = require('d3');
 
 module.exports = function(numbers) {
-    var widthScale = d3.scale.linear()
+    var x = d3.scale.linear()
         .domain([0, d3.max(numbers)])
         .range([0, 300]);
 
@@ -11,6 +11,6 @@ module.exports = function(numbers) {
         .selectAll('div')
         .data(numbers)
     .enter().append('div')
-        .style('width', function(d) { return widthScale(d) + 'px'; })
+        .style('width', function(d) { return x(d) + 'px'; })
         .text(function(d) { return d; });
 };

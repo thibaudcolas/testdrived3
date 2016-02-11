@@ -24,37 +24,37 @@ Here is boilerplate code:
 var d3 = require('d3');
 
 module.exports = function(frequencies) {
-    var chartWidth = 960;
-    var chartHeight = 500;
+    var width = 960;
+    var height = 500;
 
     // We've replaced the barWidth with a scale to do less math ourselves.
-    var widthScale = d3.scale.ordinal()
+    var x = d3.scale.ordinal()
         .domain(frequencies.map(/* TODO Base the domain on the letters available as `d.letter`. */))
-        .rangeRoundBands([0, chartWidth], 0.1);
+        .rangeRoundBands([0, width], 0.1);
 
-    var heightScale = d3.scale.linear()
+    var y = d3.scale.linear()
         .domain([0, d3.max(frequencies, function(d) { return d.value; })])
-        .range([chartHeight, 0]);
+        .range([height, 0]);
 
     var chart = d3.select('.chart')
-        .attr('width', chartWidth)
-        .attr('height', chartHeight);
+        .attr('width', width)
+        .attr('height', height);
 
-    // The rendering code now uses the widthScale and it's rangeBand to place elements.
+    // The rendering code now uses the x and it's rangeBand to place elements.
     var bar = chart.selectAll('g')
         .data(frequencies)
     .enter().append('g')
-        // TODO Use the `widthScale` on the letter to determine the X position.
+        // TODO Use the `x` on the letter to determine the X position.
         .attr('transform', function(d, i) { return 'translate(' + 'TODO' + ', 0)'; });
 
     bar.append('rect')
-        .attr('y', function(d) { return heightScale(d.value); })
-        .attr('height', function(d) { return chartHeight - heightScale(d.value); })
-        .attr('width', /* Use `widthScale.rangeBand()` so that all bars have the same, automatically-calculated width and paddings */);
+        .attr('y', function(d) { return y(d.value); })
+        .attr('height', function(d) { return height - y(d.value); })
+        .attr('width', /* Use `x.rangeBand()` so that all bars have the same, automatically-calculated width and paddings */);
 
     bar.append('text')
-        .attr('x', widthScale.rangeBand() / 2)
-        .attr('y', function(d) { return heightScale(d.value) + 3; })
+        .attr('x', x.rangeBand() / 2)
+        .attr('y', function(d) { return y(d.value) + 3; })
         .attr('dy', '.75em')
         .text(function(d) { return d.value; });
 };

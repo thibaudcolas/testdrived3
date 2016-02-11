@@ -7,7 +7,7 @@ import { frequencies } from '../../lib/data';
 const submission = global.submission;
 
 const barWidth = 960 / 26;
-const heightScale = d3.scale.linear()
+const y = d3.scale.linear()
     .domain([0, d3.max(frequencies, d => d.value)])
     .range([500, 0]);
 
@@ -92,11 +92,11 @@ describe('Part 3: Rotating into columns', () => {
         bars.each((d, i) => {
             const bar = d3.select(bars[0][i]);
             const text = bar.select('text');
-            const x = parseFloat(text.attr('x'));
-            const y = parseFloat(text.attr('y'));
+            const xPos = parseFloat(text.attr('x'));
+            const yPos = parseFloat(text.attr('y'));
 
-            expect(x).to.equal(barWidth / 2);
-            expect(y).to.be.closeTo(heightScale(d.value), 3);
+            expect(xPos).to.be.closeTo(barWidth / 2, 1);
+            expect(yPos).to.be.closeTo(y(d.value), 3);
         });
     });
 
@@ -111,7 +111,7 @@ describe('Part 3: Rotating into columns', () => {
             const height = parseFloat(rect.attr('height'));
 
             expect(width).to.be.closeTo(barWidth, 1);
-            expect(height).to.be.closeTo(500 - heightScale(d.value), 5);
+            expect(height).to.be.closeTo(500 - y(d.value), 5);
         });
     });
 });

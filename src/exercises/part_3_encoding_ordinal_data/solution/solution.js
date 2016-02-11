@@ -6,11 +6,12 @@ module.exports = function(frequencies) {
     var chartWidth = 960;
     var chartHeight = 500;
 
+    // We've replaced the barWidth with a scale to stop relying on the order
+    // of the data points in the array, and do less math ourselves.
     var widthScale = d3.scale.ordinal()
         .domain(frequencies.map(function(d) { return d.letter; }))
-        .rangeRoundBands([0, chartWidth], .1);
+        .rangeRoundBands([0, chartWidth], 0.1);
 
-    // The range now goes from the height of the chart to 0, since SVG coordinates start at the top.
     var heightScale = d3.scale.linear()
         .domain([0, d3.max(frequencies, function(d) { return d.value; })])
         .range([chartHeight, 0]);
@@ -19,7 +20,7 @@ module.exports = function(frequencies) {
         .attr('width', chartWidth)
         .attr('height', chartHeight);
 
-    // We use the barWidth to move each bar to its position.
+    // The rendering code now uses the widthScale and it's rangeBand to place elements.
     var bar = chart.selectAll('g')
         .data(frequencies)
     .enter().append('g')

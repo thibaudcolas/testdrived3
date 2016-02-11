@@ -38,4 +38,4 @@ git push --tags
 npm publish
 ```
 
-Dependencies: [![dependency Status](https://img.shields.io/david/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3)
+> Dependencies: [![dependency Status](https://img.shields.io/david/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/testdrived3.svg?style=flat-square)](https://david-dm.org/ThibWeb/testdrived3)

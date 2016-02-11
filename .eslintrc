@@ -4,7 +4,9 @@
     "rules": {
         "indent": [2, 4],
         "no-console": [0],
+        "max-len": [1, 120, 4, {"ignoreUrls": true}],
         "no-warning-comments": [1, { "terms": ["todo", "fixme", "xxx"], "location": "start" }],
-        "id-length": [1, {"min": 2, "exceptions": ["x", "y", "e", "i", "j", "k", "d", "n", "_", "$"]}]
+        "id-length": [1, {"min": 2, "exceptions": ["x", "y", "e", "i", "j", "k", "d", "n", "_", "$"]}],
+        "object-shorthand": [2, "methods"]
     }
 }

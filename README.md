@@ -3,7 +3,7 @@ Test-drive D3 for much win! [![npm](https://img.shields.io/npm/v/testdrived3.svg
 
 __testdrived3__ is an intro to [D3](http://d3js.org/) via a set of self-guided workshops. It is based on the great [Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/) tutorials from D3's creator, Mike Bostock.
 
-> TODO Screenshot
+![menu screenshot](menu-screenshot.png)
 
 1. Install [Node.js](http://nodejs.org/)
 2. Run `npm install -g testdrived3`

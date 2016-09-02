@@ -1,24 +1,22 @@
 sudo: false
 language: node_js
 node_js:
-  - '4'
-
+- 0.12
+- 4
+- node
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run test:ci
-
+- npm run test:ci
 notifications:
   email:
     on_success: change
     on_failure: always
-
 deploy:
   provider: npm
-  email: thib@thib.me
+  email: thibaudcolas@gmail.com
   api_key:
-    secure: DVXmx4Y/MJBJBTT8nGhFTkWBIeuiyYObYq77x75aoeHBqQRDI0kl9bFuh5bvI4fMOpncqIPMHylDpYk4b9KINiQYMzE8JZeRtg/wX0T7M6TxahKwniTQycVKKd83gLTWyEMMfC964JdOTMm/sHmcLkxIAnAzK63NLWMAtHCxPRUpaBpirYBzIWIih0BmLtGmyXNbKCWA5m3fW7kZzntIW+S9TlDiVW3kkbnMUVcnfBicZEcUGGvEwWEkxeTNLL1WFXWzlNC3ROMmeBV/bkrlurfr6O0EPvDOQWr/IqY+0Xfqp5WLDqxYeY/XBnvHsemaZsa4q2tuyOUV1p6tClqhX8V7oVJwfcRLw5X4BQkMPZKmHz0yUiCMhVVMmsCkonlHWoCwqeuMM65sjDHe+j5i/WdY6oxHXdmmnJpLfB8yJvz12TFmiEno2dQ0ZkziC5SQVV5BJZ7TrlNZmWpISmmCtuYZJ68EFHJ8hCaO0nI4TBmc/YeuE0nutwJCUmkoMUarU7exhVkaJLeHK0TBnypzs8ANVl+fQGDpuhjkJ4ik53IH3PAc/FEVQMXCQU/O9eyodiSLVpjvWP7CEL/C1QjAsYdr/Ul+oe9xfVWXvFLqs0nfScrmPKPR/L64wjX0BpG0jS74jt8stZShivuqGXpQCzUOpi/+00++6f0kYGrdv4o=
+    secure: FqIT5LeQ/SKzfolFY8u6Vv8nYI47gIV3KHSv1beydBsyHfYpJ4bOmgcV5SwgO7ovhSJzO+X25YBofx2LLlAgACXkgAZ9Wdl4kGSzGqrAXdGQ5/r9+EhNMi0xXrodi4YXSGtbk0QPmOyMDhaT4vm5Y9jKyW1R5OtZcG4vVYy1h6KrH3qAkpnicDlN7NfrinV8lklQWaImY6B1id+KFU5868RIY5YotIXNgzpZAuYQur2up68gutAiArH6PfDy2036wgK0sZcUf0A8x28/TJMSkb1K+WbSUiikMA6t9v2QxHh4OYzpJrnffRSo5+sN/3feei/5Ztx2aEghekyF2oJQwP4gsEn75dNpPJjt7AOqDARTFeTSLlJQaLdhiHhTs8Ds0sagVByNmVrZakyR1TDOvqIZG8JqXQmOSSSGzy1fBhXyHBTCzrVsLKV/af+TocYwu3H3EnHkSxix31ZWcBbmRAbg7c+AahCYacaUxKKhCRuyJT6L8YkjEiXvQEYNv64S/5K1gy3K1FUYqhhfsM2oFQQMGTfASu4uHA9WsA436SgKIiCaHDtmkUSwtovNrsK+LI24mGlycDsHMxF4wVndmqkI5BXeUxBfBk8ncYmgD91aM+MzZvvgI+n/JhyeD4tQ7Q/bRFoVdfw8EDCg3YcBqxZ0/Qwlbt1yqLYnmqQitm4=
   on:
     tags: true
     repo: ThibWeb/testdrived3

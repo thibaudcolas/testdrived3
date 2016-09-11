@@ -2,15 +2,15 @@
   "name": "testdrived3",
   "version": "0.8.1",
   "description": "An intro to D3 via a set of self-guided workshops",
-  "author": "Thibaud Colas <thib@thib.me> (https://github.com/ThibWeb)",
+  "author": "Thibaud Colas <thib@thib.me> (https://github.com/thibaudcolas)",
   "license": "ISC",
-  "homepage": "https://github.com/ThibWeb/testdrived3#readme",
+  "homepage": "https://github.com/thibaudcolas/testdrived3#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThibWeb/testdrived3.git"
+    "url": "git+https://github.com/thibaudcolas/testdrived3.git"
   },
   "bugs": {
-    "url": "https://github.com/ThibWeb/testdrived3/issues"
+    "url": "https://github.com/thibaudcolas/testdrived3/issues"
   },
   "keywords": [
     "d3",
@@ -46,7 +46,7 @@
     "mocha": "^2.3.3",
     "sinon": "^1.17.1",
     "update-notifier": "^0.6.0",
-    "workshopper": "thibweb/workshopper#latest-msee",
+    "workshopper": "thibaudcolas/workshopper#latest-msee",
     "workshopper-exercise": "^2.4.0"
   },
   "devDependencies": {

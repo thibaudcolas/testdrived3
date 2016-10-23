@@ -46,7 +46,7 @@
     "mocha": "^2.3.3",
     "sinon": "^1.17.1",
     "update-notifier": "^0.6.0",
-    "workshopper": "thibaudcolas/workshopper#latest-msee",
+    "workshopper": "^2.7.0",
     "workshopper-exercise": "^2.4.0"
   },
   "devDependencies": {

@@ -8,9 +8,9 @@ install:
 script:
 - npm run test:ci
 notifications:
-  email:
-    on_success: change
-    on_failure: always
+  email: false
+  slack:
+    secure: CUi+r+L/8eLSQND/VGfucMnrMugOEaNAYkja++g4zAAQF0fEjw88pp6mY4RP29tTUaEEBowQ7zgXMgk7ZEbaWJg+FFmWTLGFPqxDGaO3o8u3H4MbxXa5g0y5qHJDDX5INYntufxexnByVLcfgN4JE9Z75a9L+0/H+anLrXN82Q228pk1cmQRHQh6DFKZMiFJaFk1Z0XtXq2KFjkNW1P3neAOuYnHuw4k7s2Ltv1xguFsTASjpjwPU+9MpznSKK+BM3m7Cj821WEVYMlzrOnpsRAkv7ZpKwClnpq0NIdChlPjM36qsQhGJUhRgeHs13v2ErpVfnktK/fRAF0sIpBFCP/f63ehkBCvwflKVOUziy5YmZycP++XgDXtc+8VmBuN+10fjSA72eI/bj09zG51jgd+HGqssV324NiY+3tOZdVchWBcvchaQred6AbVAc5301pscH0ViO4akwqHOOEgbwkAKJt33uc4necUTTbgiOkKZwt+6++gYdcrytRHDkQyYeUoOMzfksXweT0A0nm7QoFDJGmVF00aI2YrJEsphAsB01a2rq3o9Nzicu1HgupSqtgNstfpTW+gjEiLKEzen2OGL6rqWaWNHIyYQFn+HfSUcZTpfV8RvTW0dGkLJPXThNMVRjGrid3sK57Uf3/+JSbfGu72EcQiEk/vtcXKz3Y=
 deploy:
   provider: npm
   email: thibaudcolas@gmail.com
